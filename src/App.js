@@ -29,5 +29,5 @@ class App extends Component {
     );
   }
 }
-//to be removed
+
 export default App;
