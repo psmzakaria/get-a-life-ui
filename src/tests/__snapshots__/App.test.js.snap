@@ -6,11 +6,15 @@ exports[`renders without crashing 1`] = `
 >
   <p
     className="App-intro"
-  />
+  >
+    This is a test
+  </p>
   <CreateEvent />
   <div
     className="App-intro"
-  />
+  >
+    This is a test
+  </div>
   <UserSignup />
 </div>
 `;
