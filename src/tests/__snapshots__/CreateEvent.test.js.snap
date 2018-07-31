@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the book component of the app  1`] = `
+<div>
+  <Form
+    as="form"
+  >
+    <FormField>
+      <label>
+        Title
+      </label>
+      <input
+        onChange={[Function]}
+        placeholder="Title of the event"
+        value=""
+      />
+    </FormField>
+    <FormField>
+      <label>
+        Start Date
+      </label>
+      <input
+        onChange={[Function]}
+        placeholder="DD/MM/YYYY"
+        value=""
+      />
+    </FormField>
+    <FormField>
+      <label>
+        End Date
+      </label>
+      <input
+        onChange={[Function]}
+        placeholder="DD/MM/YYYY"
+        value=""
+      />
+    </FormField>
+    <Button
+      as="button"
+      onClick={[Function]}
+      role="button"
+      type="submit"
+    >
+      Submit
+    </Button>
+  </Form>
+</div>
+`;
