@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { API_URL } from "./utils/configVar";
 import "./App.css";
+import CreateEvent from "../src/components/CreateEvent"
 
 class App extends Component {
   constructor() {
@@ -25,6 +26,7 @@ class App extends Component {
     return (
       <div className="App">
         <p className="App-intro">{this.state.message}</p>
+        <CreateEvent />
       </div>
     );
   }
