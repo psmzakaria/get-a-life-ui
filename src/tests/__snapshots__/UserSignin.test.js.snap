@@ -1,12 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders the sign up page  1`] = `
+exports[`renders the sign in page 1`] = `
 <div
   className="ui inverted segment"
 >
   <div
     className="ui inverted form"
   >
+    <h1>
+      Sign In Page
+    </h1>
     <Form
       as="form"
     >
@@ -20,24 +23,10 @@ exports[`renders the sign up page  1`] = `
       </FormField>
       <FormField>
         <label>
-          Username
-        </label>
-        <input
-          placeholder="Username"
-        />
-      </FormField>
-      <FormField>
-        <label>
           Password
         </label>
         <input
           placeholder="Password"
-        />
-      </FormField>
-      <FormField>
-        <Checkbox
-          label="I agree to the Terms and Conditions"
-          type="checkbox"
         />
       </FormField>
       <Button
@@ -45,15 +34,9 @@ exports[`renders the sign up page  1`] = `
         role="button"
         type="submit"
       >
-        Submit
+        Sign In
       </Button>
     </Form>
-    <div>
-      <p>
-         Have an account already?
-      </p>
-      <SigninButton />
-    </div>
   </div>
 </div>
 `;

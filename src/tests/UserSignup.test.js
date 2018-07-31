@@ -3,7 +3,7 @@ import UserSignup from "./../components/UserSignup";
 
 import ShallowRenderer from "react-test-renderer/shallow";
 
-it("renders the book component of the app ", () => {
+it("renders the sign up page ", () => {
   const renderer = new ShallowRenderer();
   renderer.render(<UserSignup />);
   const output = renderer.getRenderOutput();
