@@ -2,8 +2,8 @@ import React from "react";
 import { Button, Checkbox, Form } from "semantic-ui-react";
 import SigninButton from "./SigninButton";
 const UserSignup = () => (
-  <div class="ui inverted segment">
-    <div class="ui inverted form">
+  <div className="ui inverted segment">
+    <div className="ui inverted form">
       <Form>
         <Form.Field>
           <label>Email</label>

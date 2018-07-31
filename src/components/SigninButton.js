@@ -1,7 +1,7 @@
 import React from "react";
 
 const SigninButton = () => {
-  return <button class="ui button">Sign In</button>;
+  return <button className="ui button">Sign In</button>;
 };
 //remove this
 
