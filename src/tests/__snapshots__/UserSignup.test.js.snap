@@ -2,10 +2,10 @@
 
 exports[`renders the book component of the app  1`] = `
 <div
-  class="ui inverted segment"
+  className="ui inverted segment"
 >
   <div
-    class="ui inverted form"
+    className="ui inverted form"
   >
     <Form
       as="form"
