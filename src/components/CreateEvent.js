@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Button, Form } from "semantic-ui-react";
+import { API_URL } from "../utils/configVar";
 
 class CreateEvent extends Component {
   constructor() {
@@ -37,10 +38,12 @@ class CreateEvent extends Component {
             <input
               placeholder="DD/MM/YYYY"
               value={this.state.formFields.endDate}
-              onChange={event => this.handleChange(event, "endDAte")}
+              onChange={event => this.handleChange(event, "endDate")}
             />
           </Form.Field>
-          <Button type="submit">Submit</Button>
+          <Button type="submit" onClick={this.handleSubmit}>
+            Submit
+          </Button>
         </Form>
       </div>
     );
@@ -52,26 +55,22 @@ class CreateEvent extends Component {
       formFields: formFields
     });
   };
-  // handleSubmit = event => {
-  //   event.preventDefault();
-  //   const newEvent = {
-  //     title: this.state.formFields.title,
-  //     startDate: this.state.formFields.startDate,
-  //     endDate: this.state.formFields.endDate
-  //   };
+  handleSubmit = event => {
+    event.preventDefault();
 
-  //   this.setState({
-  //     formFields: {
-  //       title: "",
-  //       pay: "",
-  //       desc: "",
-  //       req: "",
-  //       location: "",
-  //       type: ""
-  //     },
-  //     modalOpen: false
-  //   });
-  // };
+    fetch(`${API_URL}/events/create`, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        title: this.state.formFields.title,
+        startDate: this.state.formFields.startDate,
+        endDate: this.state.formFields.endDate
+      })
+    });
+  };
 }
 
 export default CreateEvent;
