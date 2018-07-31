@@ -4,13 +4,13 @@ exports[`renders without crashing 1`] = `
 <div
   className="App"
 >
+  <p
+    className="App-intro"
+  />
+  <CreateEvent />
   <div
     className="App-intro"
-  >
-    This is a test
-  </p>
-  <CreateEvent />
-  </div>
+  />
   <UserSignup />
 </div>
 `;
