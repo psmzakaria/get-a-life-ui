@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the book component of the app  1`] = `
+<div
+  class="ui inverted segment"
+>
+  <div
+    class="ui inverted form"
+  >
+    <Form
+      as="form"
+    >
+      <FormField>
+        <label>
+          Email
+        </label>
+        <input
+          placeholder="Email"
+        />
+      </FormField>
+      <FormField>
+        <label>
+          Username
+        </label>
+        <input
+          placeholder="Username"
+        />
+      </FormField>
+      <FormField>
+        <label>
+          Password
+        </label>
+        <input
+          placeholder="Password"
+        />
+      </FormField>
+      <FormField>
+        <Checkbox
+          label="I agree to the Terms and Conditions"
+          type="checkbox"
+        />
+      </FormField>
+      <Button
+        as="button"
+        role="button"
+        type="submit"
+      >
+        Submit
+      </Button>
+    </Form>
+    <div>
+      <p>
+         Have an account already?
+      </p>
+      <SigninButton />
+    </div>
+  </div>
+</div>
+`;
