@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the home component of the app  1`] = `
+<div
+  class="container"
+>
+  <Grid>
+    <GridColumn
+      width={8}
+    >
+      <h1>
+        logo container
+      </h1>
+    </GridColumn>
+    <GridColumn
+      width={8}
+    >
+      <UserSignup />
+    </GridColumn>
+  </Grid>
+</div>
+`;
