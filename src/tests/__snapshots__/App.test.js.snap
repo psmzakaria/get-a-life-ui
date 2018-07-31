@@ -9,5 +9,6 @@ exports[`renders without crashing 1`] = `
   >
     This is a test
   </p>
+  <CreateEvent />
 </div>
 `;
