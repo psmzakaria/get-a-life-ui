@@ -15,7 +15,9 @@ exports[`renders the sign up page  1`] = `
           Email
         </label>
         <input
+          onChange={[Function]}
           placeholder="Email"
+          value=""
         />
       </FormField>
       <FormField>
@@ -23,7 +25,9 @@ exports[`renders the sign up page  1`] = `
           Username
         </label>
         <input
+          onChange={[Function]}
           placeholder="Username"
+          value=""
         />
       </FormField>
       <FormField>
@@ -31,7 +35,10 @@ exports[`renders the sign up page  1`] = `
           Password
         </label>
         <input
+          onChange={[Function]}
           placeholder="Password"
+          type="password"
+          value=""
         />
       </FormField>
       <FormField>
@@ -44,6 +51,7 @@ exports[`renders the sign up page  1`] = `
         as="button"
         color="blue"
         fluid={true}
+        onClick={[Function]}
         role="button"
         type="submit"
       >
