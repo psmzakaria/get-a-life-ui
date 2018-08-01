@@ -1,11 +1,11 @@
 import React from "react";
-import UserSignin from "./../components/UserSignin";
-
 import ShallowRenderer from "react-test-renderer/shallow";
+import SignInButton from "./../components/SignInButton";
 
-it("renders the sign in page", () => {
+it("should render the sign in button", () => {
   const renderer = new ShallowRenderer();
-  renderer.render(<UserSignin />);
+  renderer.render(<SignInButton />);
   const output = renderer.getRenderOutput();
+
   expect(output).toMatchSnapshot();
 });

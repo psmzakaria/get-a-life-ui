@@ -1,15 +1,24 @@
 import React, { Component } from "react";
 import { Grid, Responsive } from "semantic-ui-react";
 import Logo from "./Logo";
-import SigningForm from "./SigningForm";
+import CredentialsForm from "./CredentialsForm";
 import { API_URL } from "../utils/configVar";
 
 class Home extends Component {
   constructor() {
     super();
     this.state = {
-      componentToDisplay: "Signup",
-      email: "",
+      componentToDisplay: "Sign Up",
+      signUpError: {
+        hidden: true,
+        header: "",
+        content: ""
+      },
+      signInError: {
+        hidden: true,
+        header: "",
+        content: ""
+      },
       username: "",
       password: ""
     };
@@ -22,11 +31,10 @@ class Home extends Component {
             <Logo />
           </Grid.Column>
           <Grid.Column width={8}>
-            <SigningForm
+            <CredentialsForm
               loadComponent={this.loadComponent}
               handleOnChange={this.handleOnChange}
-              handleSignInSubmit={this.handleSignInSubmit}
-              handleSignUpSubmit={this.handleSignUpSubmit}
+              handleOnSubmit={this.handleOnSubmit}
               state={this.state}
             />
           </Grid.Column>
@@ -39,11 +47,10 @@ class Home extends Component {
           </Grid.Row>
           <Grid.Row>
             <Grid.Column>
-              <SigningForm
+              <CredentialsForm
                 loadComponent={this.loadComponent}
                 handleOnChange={this.handleOnChange}
-                handleSignInSubmit={this.handleSignInSubmit}
-                handleSignUpSubmit={this.handleSignUpSubmit}
+                handleOnSubmit={this.handleOnSubmit}
                 state={this.state}
               />
             </Grid.Column>
@@ -59,10 +66,10 @@ class Home extends Component {
     });
   };
 
-  handleSignInSubmit = event => {
+  handleOnSubmit = async event => {
     event.preventDefault();
 
-    fetch(`${API_URL}/users/signin`, {
+    const response = await fetch(`${API_URL}/users/${event.target.id}`, {
       method: "POST",
       credentials: "include",
       headers: {
@@ -74,23 +81,30 @@ class Home extends Component {
         password: this.state.password
       })
     });
-  };
 
-  handleSignUpSubmit = event => {
-    event.preventDefault();
+    const data = await response.json();
 
-    fetch(`${API_URL}/users/signup`, {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        email: this.state.email,
-        username: this.state.username,
-        password: this.state.password
-      })
-    });
+    if (response.ok) {
+      //redirects to dashboard page
+    } else {
+      if (this.state.componentToDisplay === "Sign Up") {
+        this.setState({
+          signUpError: {
+            hidden: false,
+            header: "Error",
+            content: data.errors.message
+          }
+        });
+      } else {
+        this.setState({
+          signInError: {
+            hidden: false,
+            header: "Error",
+            content: data.message
+          }
+        });
+      }
+    }
   };
 
   loadComponent = componentName => {
