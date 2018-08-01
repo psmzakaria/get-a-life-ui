@@ -10,18 +10,26 @@ exports[`renders the book component of the app  1`] = `
     dimmer={true}
     eventPool="Modal"
     trigger={
-      <Card>
-        <Icon
-          as="i"
-          name="add to calendar"
-          size="massive"
-        />
-        <CardContent>
-          <CardHeader>
-            Create New Event
-          </CardHeader>
-        </CardContent>
-      </Card>
+      <div
+        className="esnap-container-size"
+      >
+        <Card>
+          <div
+            className="esnap-icon"
+          >
+            <Icon
+              as="i"
+              name="add to calendar"
+              size="huge"
+            />
+          </div>
+          <CardContent>
+            <CardHeader>
+              Create New Event
+            </CardHeader>
+          </CardContent>
+        </Card>
+      </div>
     }
   >
     <ModalHeader>
