@@ -31,9 +31,6 @@ class App extends Component {
         <Home />
         <p className="App-intro">{this.state.message}</p>
         <CreateEvent />
-        <div className="App-intro">{this.state.message}</div>
-        <UserSignup />
-        <UserSignin />
       </div>
     );
   }
