@@ -15,10 +15,12 @@ exports[`renders the sign in page 1`] = `
     >
       <FormField>
         <label>
-          Email
+          Username
         </label>
         <input
-          placeholder="Email"
+          onChange={[Function]}
+          placeholder="Username"
+          value=""
         />
       </FormField>
       <FormField>
@@ -26,13 +28,16 @@ exports[`renders the sign in page 1`] = `
           Password
         </label>
         <input
+          onChange={[Function]}
           placeholder="Password"
+          value=""
         />
       </FormField>
       <Button
         as="button"
         color="blue"
         fluid={true}
+        onClick={[Function]}
         role="button"
         type="submit"
       >
