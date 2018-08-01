@@ -8,15 +8,6 @@ const UserSignup = props => {
         <h1>Sign Up</h1>
         <Form>
           <Form.Field>
-            <label>Email</label>
-            <input
-              id="email"
-              placeholder="Email"
-              value={props.email}
-              onChange={props.handleOnChange}
-            />
-          </Form.Field>
-          <Form.Field>
             <label>Username</label>
             <input
               id="username"
