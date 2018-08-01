@@ -50,9 +50,14 @@ exports[`renders the sign up page  1`] = `
     </Form>
     <div>
       <p>
-         Have an account already?
+        Have an account?
+        <a
+          onClick={[Function]}
+        >
+           
+           Sign In Here
+        </a>
       </p>
-      <SigninButton />
     </div>
   </div>
 </div>

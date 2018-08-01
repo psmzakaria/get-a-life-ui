@@ -1,7 +1,8 @@
 import React from "react";
 import { Button, Checkbox, Form } from "semantic-ui-react";
 import SigninButton from "./SigninButton";
-const UserSignup = () => (
+
+const UserSignup = (props) => (
   <div className="ui inverted segment">
     <div className="ui inverted form">
       <Form>
@@ -23,8 +24,14 @@ const UserSignup = () => (
         <Button type="submit">Submit</Button>
       </Form>
       <div>
-        <p> Have an account already?</p>
-        <SigninButton />
+        <p>
+          Have an account?
+          <a
+            onClick={() => props.loadComponent("Signin")}
+          >
+            {` `} Sign In Here
+          </a>
+        </p>
       </div>
     </div>
   </div>

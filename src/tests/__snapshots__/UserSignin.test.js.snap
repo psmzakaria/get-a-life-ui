@@ -37,6 +37,17 @@ exports[`renders the sign in page 1`] = `
         Sign In
       </Button>
     </Form>
+    <div>
+      <p>
+        Don't have an account?
+        <a
+          onClick={[Function]}
+        >
+           
+           Sign Up Here
+        </a>
+      </p>
+    </div>
   </div>
 </div>
 `;
