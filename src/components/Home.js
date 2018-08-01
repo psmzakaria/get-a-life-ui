@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Grid } from "semantic-ui-react";
+import { Grid, Responsive } from "semantic-ui-react";
 import UserSignup from "./UserSignup";
 import UserSignin from "./UserSignin";
 
@@ -12,8 +12,8 @@ class Home extends Component {
   }
   render() {
     return (
-      <div class="container">
-        <Grid>
+      <div className="container">
+        <Responsive as={Grid} minWidth={768}>
           <Grid.Column width={8}>
             <h1>logo container</h1>
           </Grid.Column>
@@ -25,7 +25,19 @@ class Home extends Component {
               <UserSignin loadComponent={this.loadComponent} />
             )}
           </Grid.Column>
-        </Grid>
+        </Responsive>
+        <Responsive as={Grid} {...Responsive.onlyMobile}>
+          <Grid.Row>
+            <Grid.Column>
+              <h1>logo container</h1>
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row>
+            <Grid.Column>
+              <UserSignup />
+            </Grid.Column>
+          </Grid.Row>
+        </Responsive>
       </div>
     );
   }

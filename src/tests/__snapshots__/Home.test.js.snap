@@ -2,9 +2,13 @@
 
 exports[`renders the home component of the app  1`] = `
 <div
-  class="container"
+  className="container"
 >
-  <Grid>
+  <Responsive
+    as={[Function]}
+    getWidth={[Function]}
+    minWidth={768}
+  >
     <GridColumn
       width={8}
     >
@@ -19,6 +23,25 @@ exports[`renders the home component of the app  1`] = `
         loadComponent={[Function]}
       />
     </GridColumn>
-  </Grid>
+  </Responsive>
+  <Responsive
+    as={[Function]}
+    getWidth={[Function]}
+    maxWidth={767}
+    minWidth={320}
+  >
+    <GridRow>
+      <GridColumn>
+        <h1>
+          logo container
+        </h1>
+      </GridColumn>
+    </GridRow>
+    <GridRow>
+      <GridColumn>
+        <UserSignup />
+      </GridColumn>
+    </GridRow>
+  </Responsive>
 </div>
 `;
