@@ -12,9 +12,7 @@ exports[`renders the home component of the app  1`] = `
     <GridColumn
       width={8}
     >
-      <h1>
-        logo container
-      </h1>
+      <Logo />
     </GridColumn>
     <GridColumn
       width={8}
@@ -32,9 +30,7 @@ exports[`renders the home component of the app  1`] = `
   >
     <GridRow>
       <GridColumn>
-        <h1>
-          logo container
-        </h1>
+        <Logo />
       </GridColumn>
     </GridRow>
     <GridRow>
