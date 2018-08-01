@@ -2,47 +2,80 @@
 
 exports[`renders the book component of the app  1`] = `
 <div>
-  <Form
-    as="form"
+  <Modal
+    centered={true}
+    closeIcon={true}
+    closeOnDimmerClick={true}
+    closeOnDocumentClick={false}
+    dimmer={true}
+    eventPool="Modal"
+    trigger={
+      <Card>
+        <Icon
+          as="i"
+          name="add to calendar"
+          size="massive"
+        />
+        <CardContent>
+          <CardHeader>
+            Create New Event
+          </CardHeader>
+        </CardContent>
+      </Card>
+    }
   >
-    <FormField>
-      <label>
-        Title
-      </label>
-      <input
-        onChange={[Function]}
-        placeholder="Title of the event"
-        value=""
-      />
-    </FormField>
-    <FormField>
-      <label>
-        Start Date
-      </label>
-      <input
-        onChange={[Function]}
-        placeholder="DD/MM/YYYY"
-        value=""
-      />
-    </FormField>
-    <FormField>
-      <label>
-        End Date
-      </label>
-      <input
-        onChange={[Function]}
-        placeholder="DD/MM/YYYY"
-        value=""
-      />
-    </FormField>
-    <Button
-      as="button"
-      onClick={[Function]}
-      role="button"
-      type="submit"
+    <ModalHeader>
+      Employer Login
+    </ModalHeader>
+    <ModalContent
+      image={true}
+      scrolling={true}
     >
-      Submit
-    </Button>
-  </Form>
+      <ModalDescription>
+        <Form
+          as="form"
+        >
+          <FormField>
+            <label>
+              Title
+            </label>
+            <input
+              onChange={[Function]}
+              placeholder="Title of the event"
+              value=""
+            />
+          </FormField>
+          <FormField>
+            <label>
+              Start Date
+            </label>
+            <input
+              onChange={[Function]}
+              placeholder="DD/MM/YYYY"
+              value=""
+            />
+          </FormField>
+          <FormField>
+            <label>
+              End Date
+            </label>
+            <input
+              onChange={[Function]}
+              placeholder="DD/MM/YYYY"
+              value=""
+            />
+          </FormField>
+          <Button
+            as="button"
+            onClick={[Function]}
+            role="button"
+            type="submit"
+          >
+            Submit
+          </Button>
+        </Form>
+      </ModalDescription>
+    </ModalContent>
+  </Modal>
 </div>
 `;

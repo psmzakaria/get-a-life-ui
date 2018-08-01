@@ -1,17 +1,23 @@
 import React, { Component } from "react";
-import { Grid, Responsive } from "semantic-ui-react";
+import { Grid } from "semantic-ui-react";
+import EOrganiser from "./EOrganiser";
 
 class Home extends Component {
   constructor() {
     super();
-    this.state = {
-      
-    };
+    this.state = {};
   }
   render() {
     return (
       <div>
-        <h1>here</h1>
+        <Grid columns={2} divided>
+          <Grid.Column width={4} color="violet">
+            <p>username</p>
+          </Grid.Column>
+          <Grid.Column width={9}>
+            <EOrganiser />
+          </Grid.Column>
+        </Grid>
       </div>
     );
   }

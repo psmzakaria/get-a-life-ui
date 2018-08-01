@@ -12,6 +12,18 @@ body {
   cursor: pointer;
 }
 
+.esnap-container-size {
+  width: 200px;
+  height: 300px;
+  margin: 20px;
+}
+
+.esnap-icon {
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px
+}
+
 .container {
   margin: 50px;
   border: 2px solid black;
