@@ -10,7 +10,8 @@ class CreateEvent extends Component {
         title: "",
         startDate: "",
         endDate: ""
-      }
+      },
+      modalOpen: false
     };
   }
   render() {
@@ -19,7 +20,7 @@ class CreateEvent extends Component {
         <Modal
           trigger={
             <div className="esnap-container-size">
-              <Card>
+              <Card onClick={this.handleOpen}>
                 <div className="esnap-icon">
                   <Icon name="add to calendar" size="huge" />
                 </div>
@@ -29,6 +30,8 @@ class CreateEvent extends Component {
               </Card>
             </div>
           }
+          open={this.state.modalOpen}
+          onClose={this.handleClose}
           closeIcon
         >
           <Modal.Header>Employer Login</Modal.Header>
@@ -69,6 +72,8 @@ class CreateEvent extends Component {
       </div>
     );
   }
+  handleOpen = () => this.setState({ modalOpen: true });
+  handleClose = () => this.setState({ modalOpen: false });
   handleChange = (event, propertyName) => {
     const formFields = this.state.formFields;
     formFields[propertyName] = event.target.value;
@@ -78,6 +83,9 @@ class CreateEvent extends Component {
   };
   handleSubmit = event => {
     event.preventDefault();
+    this.setState({
+      modalOpen: false
+    });
 
     fetch(`${API_URL}/events/create`, {
       method: "POST",
