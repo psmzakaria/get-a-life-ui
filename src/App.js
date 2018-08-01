@@ -4,6 +4,7 @@ import UserSignin from "./components/UserSignin";
 import UserSignup from "./components/UserSignup";
 import "./App.css";
 import CreateEvent from "../src/components/CreateEvent";
+import Dashboard from "../src/components/Dashboard";
 import Home from "../src/components/Home";
 
 class App extends Component {
@@ -31,6 +32,7 @@ class App extends Component {
         <Home />
         <p className="App-intro">{this.state.message}</p>
         <CreateEvent />
+        <Dashboard />
       </div>
     );
   }
