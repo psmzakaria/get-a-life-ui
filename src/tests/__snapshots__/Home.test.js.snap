@@ -25,7 +25,9 @@ exports[`renders the home component of the app  1`] = `
         state={
           Object {
             "componentToDisplay": "Signup",
-            "email": "",
+            "errorContent": "",
+            "errorHeader": "",
+            "hideError": true,
             "password": "",
             "username": "",
           }
@@ -54,7 +56,9 @@ exports[`renders the home component of the app  1`] = `
           state={
             Object {
               "componentToDisplay": "Signup",
-              "email": "",
+              "errorContent": "",
+              "errorHeader": "",
+              "hideError": true,
               "password": "",
               "username": "",
             }

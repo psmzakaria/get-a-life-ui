@@ -10,20 +10,15 @@ exports[`renders the sign up page  1`] = `
     <h1>
       Sign Up
     </h1>
+    <Message
+      content=""
+      header=""
+      hidden={true}
+      negative={true}
+    />
     <Form
       as="form"
     >
-      <FormField>
-        <label>
-          Email
-        </label>
-        <input
-          id="email"
-          onChange={undefined}
-          placeholder="Email"
-          value={undefined}
-        />
-      </FormField>
       <FormField>
         <label>
           Username
@@ -32,7 +27,7 @@ exports[`renders the sign up page  1`] = `
           id="username"
           onChange={undefined}
           placeholder="Username"
-          value={undefined}
+          value=""
         />
       </FormField>
       <FormField>
@@ -44,7 +39,7 @@ exports[`renders the sign up page  1`] = `
           onChange={undefined}
           placeholder="Password"
           type="password"
-          value={undefined}
+          value=""
         />
       </FormField>
       <FormField>
