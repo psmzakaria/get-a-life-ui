@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render the sign in button 1`] = `
+<div>
+  <Button
+    as="button"
+    color="blue"
+    fluid={true}
+    id="signin"
+    onClick={undefined}
+    role="button"
+    type="submit"
+  >
+    Sign In
+  </Button>
+  <Divider />
+  <div>
+    <p
+      className="text-align-center"
+    >
+      Don't have an account?
+      <a
+        className="cursor-pointer"
+        onClick={[Function]}
+      >
+         
+         Sign Up Here
+      </a>
+    </p>
+  </div>
+</div>
+`;

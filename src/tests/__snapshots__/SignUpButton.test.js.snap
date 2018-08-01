@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render the sign up button  1`] = `
+<div>
+  <FormField>
+    <Checkbox
+      label="I agree to the Terms and Conditions"
+      type="checkbox"
+    />
+  </FormField>
+  <Button
+    as="button"
+    color="blue"
+    fluid={true}
+    id="signup"
+    onClick={undefined}
+    role="button"
+    type="submit"
+  >
+    Submit
+  </Button>
+  <Divider />
+  <div>
+    <p
+      className="text-align-center"
+    >
+      Have an account?
+      <a
+        className="cursor-pointer"
+        onClick={[Function]}
+      >
+         
+         Sign In Here
+      </a>
+    </p>
+  </div>
+</div>
+`;
