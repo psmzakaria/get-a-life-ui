@@ -17,18 +17,24 @@ exports[`renders the home component of the app  1`] = `
     <GridColumn
       width={8}
     >
-      <SigningForm
+      <CrendentialsForm
         handleOnChange={[Function]}
-        handleSignInSubmit={[Function]}
-        handleSignUpSubmit={[Function]}
+        handleOnSubmit={[Function]}
         loadComponent={[Function]}
         state={
           Object {
-            "componentToDisplay": "Signup",
-            "errorContent": "",
-            "errorHeader": "",
-            "hideError": true,
+            "componentToDisplay": "Sign Up",
             "password": "",
+            "signInError": Object {
+              "content": "",
+              "header": "",
+              "hidden": true,
+            },
+            "signUpError": Object {
+              "content": "",
+              "header": "",
+              "hidden": true,
+            },
             "username": "",
           }
         }
@@ -48,18 +54,24 @@ exports[`renders the home component of the app  1`] = `
     </GridRow>
     <GridRow>
       <GridColumn>
-        <SigningForm
+        <CrendentialsForm
           handleOnChange={[Function]}
-          handleSignInSubmit={[Function]}
-          handleSignUpSubmit={[Function]}
+          handleOnSubmit={[Function]}
           loadComponent={[Function]}
           state={
             Object {
-              "componentToDisplay": "Signup",
-              "errorContent": "",
-              "errorHeader": "",
-              "hideError": true,
+              "componentToDisplay": "Sign Up",
               "password": "",
+              "signInError": Object {
+                "content": "",
+                "header": "",
+                "hidden": true,
+              },
+              "signUpError": Object {
+                "content": "",
+                "header": "",
+                "hidden": true,
+              },
               "username": "",
             }
           }
