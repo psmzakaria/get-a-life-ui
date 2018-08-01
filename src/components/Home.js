@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Grid, Responsive } from "semantic-ui-react";
 import UserSignup from "./UserSignup";
 import UserSignin from "./UserSignin";
+import Logo from "./Logo";
 
 class Home extends Component {
   constructor() {
@@ -15,7 +16,7 @@ class Home extends Component {
       <div className="container">
         <Responsive as={Grid} minWidth={768}>
           <Grid.Column width={8}>
-            <h1>logo container</h1>
+            <Logo />
           </Grid.Column>
           <Grid.Column width={8}>
             {this.state.componentToDisplay === "Signup" && (
@@ -29,7 +30,7 @@ class Home extends Component {
         <Responsive as={Grid} {...Responsive.onlyMobile}>
           <Grid.Row>
             <Grid.Column>
-              <h1>logo container</h1>
+              <Logo />
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
