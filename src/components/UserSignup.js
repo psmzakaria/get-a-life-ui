@@ -12,7 +12,7 @@ const UserSignup = props => {
             <input
               id="username"
               placeholder="Username"
-              value={props.username}
+              value={props.state.username}
               onChange={props.handleOnChange}
             />
           </Form.Field>
@@ -21,7 +21,7 @@ const UserSignup = props => {
             <input
               id="password"
               placeholder="Password"
-              value={props.password}
+              value={props.state.password}
               onChange={props.handleOnChange}
               type="password"
             />

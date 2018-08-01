@@ -10,9 +10,7 @@ const SigningForm = props => {
           loadComponent={props.loadComponent}
           handleOnChange={props.handleOnChange}
           handleSubmit={props.handleSignUpSubmit}
-          email={props.state.email}
-          username={props.state.username}
-          password={props.state.password}
+          state={props.state}
         />
       )}
       {props.state.componentToDisplay === "Signin" && (
