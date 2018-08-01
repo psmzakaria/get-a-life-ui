@@ -18,8 +18,18 @@ exports[`renders the home component of the app  1`] = `
       width={8}
     >
       <SigningForm
-        componentToDisplay="Signup"
+        handleOnChange={[Function]}
+        handleSignInSubmit={[Function]}
+        handleSignUpSubmit={[Function]}
         loadComponent={[Function]}
+        state={
+          Object {
+            "componentToDisplay": "Signup",
+            "email": "",
+            "password": "",
+            "username": "",
+          }
+        }
       />
     </GridColumn>
   </Responsive>
@@ -37,8 +47,18 @@ exports[`renders the home component of the app  1`] = `
     <GridRow>
       <GridColumn>
         <SigningForm
-          componentToDisplay="Signup"
+          handleOnChange={[Function]}
+          handleSignInSubmit={[Function]}
+          handleSignUpSubmit={[Function]}
           loadComponent={[Function]}
+          state={
+            Object {
+              "componentToDisplay": "Signup",
+              "email": "",
+              "password": "",
+              "username": "",
+            }
+          }
         />
       </GridColumn>
     </GridRow>

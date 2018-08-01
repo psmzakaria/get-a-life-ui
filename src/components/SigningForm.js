@@ -5,11 +5,24 @@ import UserSignin from "./UserSignin";
 const SigningForm = props => {
   return (
     <div>
-      {props.componentToDisplay === "Signup" && (
-        <UserSignup loadComponent={props.loadComponent} />
+      {props.state.componentToDisplay === "Signup" && (
+        <UserSignup
+          loadComponent={props.loadComponent}
+          handleOnChange={props.handleOnChange}
+          handleSubmit={props.handleSignUpSubmit}
+          email={props.state.email}
+          username={props.state.username}
+          password={props.state.password}
+        />
       )}
-      {props.componentToDisplay === "Signin" && (
-        <UserSignin loadComponent={props.loadComponent} />
+      {props.state.componentToDisplay === "Signin" && (
+        <UserSignin
+          loadComponent={props.loadComponent}
+          handleOnChange={props.handleOnChange}
+          handleSubmit={props.handleSignInSubmit}
+          username={props.state.username}
+          password={props.state.password}
+        />
       )}
     </div>
   );

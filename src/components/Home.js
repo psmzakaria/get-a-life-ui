@@ -2,12 +2,16 @@ import React, { Component } from "react";
 import { Grid, Responsive } from "semantic-ui-react";
 import Logo from "./Logo";
 import SigningForm from "./SigningForm";
+import { API_URL } from "../utils/configVar";
 
 class Home extends Component {
   constructor() {
     super();
     this.state = {
-      componentToDisplay: "Signup"
+      componentToDisplay: "Signup",
+      email: "",
+      username: "",
+      password: ""
     };
   }
   render() {
@@ -19,8 +23,11 @@ class Home extends Component {
           </Grid.Column>
           <Grid.Column width={8}>
             <SigningForm
-              componentToDisplay={this.state.componentToDisplay}
               loadComponent={this.loadComponent}
+              handleOnChange={this.handleOnChange}
+              handleSignInSubmit={this.handleSignInSubmit}
+              handleSignUpSubmit={this.handleSignUpSubmit}
+              state={this.state}
             />
           </Grid.Column>
         </Responsive>
@@ -33,8 +40,11 @@ class Home extends Component {
           <Grid.Row>
             <Grid.Column>
               <SigningForm
-                componentToDisplay={this.state.componentToDisplay}
                 loadComponent={this.loadComponent}
+                handleOnChange={this.handleOnChange}
+                handleSignInSubmit={this.handleSignInSubmit}
+                handleSignUpSubmit={this.handleSignUpSubmit}
+                state={this.state}
               />
             </Grid.Column>
           </Grid.Row>
@@ -42,6 +52,47 @@ class Home extends Component {
       </div>
     );
   }
+
+  handleOnChange = event => {
+    this.setState({
+      [event.target.id]: event.target.value
+    });
+  };
+
+  handleSignInSubmit = event => {
+    event.preventDefault();
+
+    fetch(`${API_URL}/users/signin`, {
+      method: "POST",
+      credentials: "include",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        username: this.state.username,
+        password: this.state.password
+      })
+    });
+  };
+
+  handleSignUpSubmit = event => {
+    event.preventDefault();
+
+    fetch(`${API_URL}/users/signup`, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        email: this.state.email,
+        username: this.state.username,
+        password: this.state.password
+      })
+    });
+  };
+
   loadComponent = componentName => {
     this.setState({
       componentToDisplay: componentName

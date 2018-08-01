@@ -1,79 +1,50 @@
-import React, { Component } from 'react';
-import { Button, Form, Divider } from 'semantic-ui-react';
-import { API_URL } from '../utils/configVar';
+import React from "react";
+import { Button, Form, Divider } from "semantic-ui-react";
 
-class UserSignin extends Component {
-	constructor() {
-		super();
-		this.state = {
-			formFields: {
-				username: '',
-				password: ''
-			}
-		};
-	}
-	render() {
-		return (
-			<div className="ui inverted segment">
-				<div className="ui inverted form">
-					<h1>Sign In Page</h1>
-					<Form>
-						<Form.Field>
-							<label>Username</label>
-							<input
-								placeholder="Username"
-								value={this.state.formFields.username}
-								onChange={(event) => this.handleChange(event, 'username')}
-							/>
-						</Form.Field>
-						<Form.Field>
-							<label>Password</label>
-							<input
-								placeholder="Password"
-								value={this.state.formFields.password}
-								onChange={(event) => this.handleChange(event, 'password')}
-							/>
-						</Form.Field>
-						<Button fluid color="blue" type="submit" onClick={this.handleSubmit}>
-							Sign In
-						</Button>
-					</Form>
-					<Divider />
-					<div>
-						<p className="text-align-center">
-							Don't have an account?
-							<a className="cursor-pointer" onClick={() => this.props.loadComponent('Signup')}>
-								{` `} Sign Up Here
-							</a>
-						</p>
-					</div>
-				</div>
-			</div>
-		);
-	}
-	handleChange = (event, propertyName) => {
-		const formFields = this.state.formFields;
-		formFields[propertyName] = event.target.value;
-		this.setState({
-			formFields: formFields
-		});
-	};
-	handleSubmit = (event) => {
-		event.preventDefault();
-
-		fetch(`${API_URL}/users/signin`, {
-			method: 'POST',
-			credentials: 'include',
-			headers: {
-				Accept: 'application/json',
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({
-				username: this.state.formFields.username,
-				password: this.state.formFields.password
-			})
-		});
-	};
-}
+const UserSignin = props => {
+  return (
+    <div className="ui inverted segment">
+      <div className="ui inverted form">
+        <h1>Sign In</h1>
+        <Form>
+          <Form.Field>
+            <label>Username</label>
+            <input
+              id="username"
+              placeholder="Username"
+              value={props.username}
+              onChange={props.handleOnChange}
+            />
+          </Form.Field>
+          <Form.Field>
+            <label>Password</label>
+            <input
+              id="password"
+              placeholder="Password"
+              type="password"
+              value={props.password}
+              onChange={props.handleOnChange}
+            />
+          </Form.Field>
+          <Button fluid color="blue" type="submit" onClick={props.handleSubmit}>
+            Sign In
+          </Button>
+        </Form>
+        <Divider />
+        <div>
+          <p className="text-align-center">
+            Don't have an account?
+            <a
+              className="cursor-pointer"
+              onClick={() => props.loadComponent("Signup")}
+            >
+              {` `} Sign Up Here
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default UserSignin;

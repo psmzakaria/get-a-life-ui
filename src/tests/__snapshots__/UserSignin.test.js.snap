@@ -8,7 +8,7 @@ exports[`renders the sign in page 1`] = `
     className="ui inverted form"
   >
     <h1>
-      Sign In Page
+      Sign In
     </h1>
     <Form
       as="form"
@@ -18,9 +18,10 @@ exports[`renders the sign in page 1`] = `
           Username
         </label>
         <input
-          onChange={[Function]}
+          id="username"
+          onChange={undefined}
           placeholder="Username"
-          value=""
+          value={undefined}
         />
       </FormField>
       <FormField>
@@ -28,16 +29,18 @@ exports[`renders the sign in page 1`] = `
           Password
         </label>
         <input
-          onChange={[Function]}
+          id="password"
+          onChange={undefined}
           placeholder="Password"
-          value=""
+          type="password"
+          value={undefined}
         />
       </FormField>
       <Button
         as="button"
         color="blue"
         fluid={true}
-        onClick={[Function]}
+        onClick={undefined}
         role="button"
         type="submit"
       >
