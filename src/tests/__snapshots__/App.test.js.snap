@@ -11,12 +11,6 @@ exports[`renders without crashing 1`] = `
     This is a test
   </p>
   <CreateEvent />
-  <div
-    className="App-intro"
-  >
-    This is a test
-  </div>
-  <UserSignup />
-  <UserSignin />
+  <Home />
 </div>
 `;
