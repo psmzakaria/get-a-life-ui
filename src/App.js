@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { API_URL } from "./utils/configVar";
-import UserSignin from "./components/UserSignin";
-import UserSignup from "./components/UserSignup";
 import "./App.css";
 import CreateEvent from "../src/components/CreateEvent";
 import Dashboard from "../src/components/Dashboard";
