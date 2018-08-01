@@ -18,12 +18,16 @@ class CreateEvent extends Component {
       <div>
         <Modal
           trigger={
-            <Card>
-              <Icon name="add to calendar" size="massive" />
-              <Card.Content>
-                <Card.Header>Create New Event</Card.Header>
-              </Card.Content>
-            </Card>
+            <div className="esnap-container-size">
+              <Card>
+                <div className="esnap-icon">
+                  <Icon name="add to calendar" size="huge" />
+                </div>
+                <Card.Content>
+                  <Card.Header>Create New Event</Card.Header>
+                </Card.Content>
+              </Card>
+            </div>
           }
           closeIcon
         >

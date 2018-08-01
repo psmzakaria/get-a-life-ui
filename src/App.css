@@ -12,16 +12,25 @@ body {
   cursor: pointer;
 }
 
+.eorganiser-container {
+  padding: 20px;
+}
+
 .esnap-container-size {
   width: 200px;
-  height: 300px;
-  margin: 20px;
+  height: 100%;
+  margin: 10px;
+  cursor: pointer;
 }
 
 .esnap-icon {
   margin: auto;
   margin-top: 20px;
   margin-bottom: 20px
+}
+
+.profile-container {
+  height: 800px;
 }
 
 .container {

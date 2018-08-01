@@ -8,11 +8,11 @@ class ESnap extends Component {
   }
   render() {
     return (
-    //   <div className="esnap-container-size">
-        <Card raised>
-        <div className="esnap-icon">
-          <Icon name="birthday cake" size="massive" />
-          </div>
+      <div className="esnap-container-size">
+        <Card color="red">
+          {/* <div className="esnap-icon">
+            <Icon name="calendar alternate outline" size="massive" />
+          </div> */}
           <Card.Content>
             <Card.Header>title</Card.Header>
             <Card.Meta>
@@ -27,7 +27,7 @@ class ESnap extends Component {
             </a>
           </Card.Content>
         </Card>
-    //   </div>
+      </div>
     );
   }
 }

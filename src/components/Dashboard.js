@@ -17,15 +17,17 @@ class Home extends Component {
     return (
       <div>
         <Grid columns={2} divided>
-          <Grid.Column textAlign="center" width={4} color="violet" >
+          <Grid.Column textAlign="center" width={4} color="violet">
+            <div className="profile-container">
               <h2>Profile</h2>
               <Icon size="huge" inverted color="teal" circular name="user" />
               <h3>
                 <br />
                 {this.state.username}
               </h3>
+            </div>
           </Grid.Column>
-          <Grid.Column textAlign="center" width={9}>
+          <Grid.Column width={9}>
             <EOrganiser />
           </Grid.Column>
         </Grid>

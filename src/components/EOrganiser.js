@@ -10,7 +10,7 @@ class EOrganiser extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="eorganiser-container">
         <Card.Group itemsPerRow={3}>
           <CreateEvent />
           <ESnap />
