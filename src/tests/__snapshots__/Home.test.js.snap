@@ -17,7 +17,8 @@ exports[`renders the home component of the app  1`] = `
     <GridColumn
       width={8}
     >
-      <UserSignup
+      <SigningForm
+        componentToDisplay="Signup"
         loadComponent={[Function]}
       />
     </GridColumn>
@@ -35,7 +36,10 @@ exports[`renders the home component of the app  1`] = `
     </GridRow>
     <GridRow>
       <GridColumn>
-        <UserSignup />
+        <SigningForm
+          componentToDisplay="Signup"
+          loadComponent={[Function]}
+        />
       </GridColumn>
     </GridRow>
   </Responsive>

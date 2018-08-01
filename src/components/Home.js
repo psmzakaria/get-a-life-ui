@@ -3,6 +3,7 @@ import { Grid, Responsive } from "semantic-ui-react";
 import UserSignup from "./UserSignup";
 import UserSignin from "./UserSignin";
 import Logo from "./Logo";
+import SigningForm from "./SigningForm";
 
 class Home extends Component {
   constructor() {
@@ -19,12 +20,10 @@ class Home extends Component {
             <Logo />
           </Grid.Column>
           <Grid.Column width={8}>
-            {this.state.componentToDisplay === "Signup" && (
-              <UserSignup loadComponent={this.loadComponent} />
-            )}
-            {this.state.componentToDisplay === "Signin" && (
-              <UserSignin loadComponent={this.loadComponent} />
-            )}
+            <SigningForm
+              componentToDisplay={this.state.componentToDisplay}
+              loadComponent={this.loadComponent}
+            />
           </Grid.Column>
         </Responsive>
         <Responsive as={Grid} {...Responsive.onlyMobile}>
@@ -35,7 +34,10 @@ class Home extends Component {
           </Grid.Row>
           <Grid.Row>
             <Grid.Column>
-              <UserSignup />
+              <SigningForm
+                componentToDisplay={this.state.componentToDisplay}
+                loadComponent={this.loadComponent}
+              />
             </Grid.Column>
           </Grid.Row>
         </Responsive>
