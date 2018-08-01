@@ -31,16 +31,22 @@ exports[`renders the sign in page 1`] = `
       </FormField>
       <Button
         as="button"
+        color="blue"
+        fluid={true}
         role="button"
         type="submit"
       >
         Sign In
       </Button>
     </Form>
+    <Divider />
     <div>
-      <p>
+      <p
+        className="text-align-center"
+      >
         Don't have an account?
         <a
+          className="cursor-pointer"
           onClick={[Function]}
         >
            

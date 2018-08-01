@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Checkbox, Form } from "semantic-ui-react";
+import { Button, Checkbox, Form, Divider } from "semantic-ui-react";
 
 const UserSignup = props => (
   <div className="ui inverted segment">
@@ -20,12 +20,16 @@ const UserSignup = props => (
         <Form.Field>
           <Checkbox label="I agree to the Terms and Conditions" />
         </Form.Field>
-        <Button type="submit">Submit</Button>
+        <Button fluid color='blue' type="submit">Submit</Button>
       </Form>
+      <Divider />
       <div>
-        <p>
+        <p className="text-align-center">
           Have an account?
-          <a onClick={() => props.loadComponent("Signin")}>
+
+          <a className="cursor-pointer"
+            onClick={() => props.loadComponent("Signin")}
+          >
             {` `} Sign In Here
           </a>
         </p>

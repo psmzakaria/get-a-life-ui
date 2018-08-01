@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Form } from "semantic-ui-react";
+import { Button, Form, Divider } from "semantic-ui-react";
 
 const UserSignin = props => (
   <div className="ui inverted segment">
@@ -14,12 +14,13 @@ const UserSignin = props => (
           <label>Password</label>
           <input placeholder="Password" />
         </Form.Field>
-        <Button type="submit">Sign In</Button>
+        <Button fluid color='blue' type="submit">Sign In</Button>
       </Form>
+      <Divider />
       <div>
-        <p>
+        <p className="text-align-center">
           Don't have an account?
-          <a
+          <a className="cursor-pointer"
             onClick={() => props.loadComponent("Signup")}
           >
             {` `} Sign Up Here

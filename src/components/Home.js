@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { Grid, Responsive } from "semantic-ui-react";
-import UserSignup from "./UserSignup";
-import UserSignin from "./UserSignin";
 import Logo from "./Logo";
 import SigningForm from "./SigningForm";
 
