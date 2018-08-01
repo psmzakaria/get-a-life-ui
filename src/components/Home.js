@@ -9,7 +9,9 @@ class Home extends Component {
     super();
     this.state = {
       componentToDisplay: "Signup",
-      email: "",
+      hideError: true,
+      errorHeader: "",
+      errorContent: "",
       username: "",
       password: ""
     };
@@ -76,10 +78,10 @@ class Home extends Component {
     });
   };
 
-  handleSignUpSubmit = event => {
+  handleSignUpSubmit = async event => {
     event.preventDefault();
 
-    fetch(`${API_URL}/users/signup`, {
+    const response = await fetch(`${API_URL}/users/signup`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -91,6 +93,18 @@ class Home extends Component {
         password: this.state.password
       })
     });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      //redirects to dashboard page
+    } else {
+      this.setState({
+        hideError: false,
+        errorHeader: "Error",
+        errorContent: data.errors.message
+      });
+    }
   };
 
   loadComponent = componentName => {

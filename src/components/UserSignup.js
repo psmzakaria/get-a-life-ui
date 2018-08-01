@@ -1,11 +1,17 @@
 import React from "react";
-import { Button, Checkbox, Form, Divider } from "semantic-ui-react";
+import { Button, Checkbox, Form, Divider, Message } from "semantic-ui-react";
 
 const UserSignup = props => {
   return (
     <div className="ui inverted segment">
       <div className="ui inverted form">
         <h1>Sign Up</h1>
+        <Message
+          negative
+          hidden={props.state.hideError}
+          header={props.state.errorHeader}
+          content={props.state.errorContent}
+        />
         <Form>
           <Form.Field>
             <label>Username</label>
