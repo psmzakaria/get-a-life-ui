@@ -89,6 +89,7 @@ class CreateEvent extends Component {
 
     fetch(`${API_URL}/events/create`, {
       method: "POST",
+      credentials: "include",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json"
