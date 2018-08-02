@@ -87,7 +87,7 @@ class Home extends Component {
 
     if (response.ok) {
       this.props.history.push({
-        pathname: "/events"
+        pathname: `${this.state.username}/events`
       });
     } else {
       if (this.state.componentToDisplay === "Sign Up") {

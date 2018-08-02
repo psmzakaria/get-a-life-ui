@@ -29,7 +29,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <Route exact path="/" component={Home} />
-          <Route exact path="/events" component={Dashboard} />
+          <Route exact path="/:username/events" component={Dashboard} />
         </div>
       </Router>
     );
