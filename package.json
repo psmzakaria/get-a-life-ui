@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "cypress": "^3.0.3",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-router-dom": "^4.3.1",
@@ -16,10 +15,13 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "test:cypress": "cypress open",
-    "test:cypress-headless": "cypress run"
+    "test:cypress-headless": "cypress run",
+    "db:reset": "node clearTestDb.js"
   },
   "devDependencies": {
+    "cypress": "^3.0.3",
     "jest-fetch-mock": "^1.6.5",
+    "mongoose": "^5.2.6",
     "react-test-renderer": "^16.4.1"
   }
 }
