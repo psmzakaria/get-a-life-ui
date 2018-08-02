@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { API_URL } from "./utils/configVar";
 import "./App.css";
-import CreateEvent from "../src/components/CreateEvent";
 import Dashboard from "../src/components/Dashboard";
 import Home from "../src/components/Home";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 class App extends Component {
   constructor() {
@@ -26,12 +26,12 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Home />
-        <p className="App-intro">{this.state.message}</p>
-        <CreateEvent />
-        <Dashboard />
-      </div>
+      <Router>
+        <div className="App">
+          <Route exact path="/" component={Home} />
+          <Route exact path="/events" component={Dashboard} />
+        </div>
+      </Router>
     );
   }
 }

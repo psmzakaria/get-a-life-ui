@@ -23,6 +23,7 @@ class Home extends Component {
       password: ""
     };
   }
+
   render() {
     return (
       <div className="container">
@@ -85,7 +86,9 @@ class Home extends Component {
     const data = await response.json();
 
     if (response.ok) {
-      //redirects to dashboard page
+      this.props.history.push({
+        pathname: "/events"
+      });
     } else {
       if (this.state.componentToDisplay === "Sign Up") {
         this.setState({
