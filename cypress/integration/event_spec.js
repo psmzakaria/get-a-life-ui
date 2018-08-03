@@ -25,7 +25,7 @@ context("Eventpage test", () => {
       .clear()
       .type("10/08/2018")
       .should("have.value", "10/08/2018");
-      cy.get("#end")
+      cy.get("#end")      
       .clear()
       .type("25/08/2018")
       .should("have.value", "25/08/2018");
