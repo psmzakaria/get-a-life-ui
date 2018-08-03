@@ -14,7 +14,7 @@ class ESnap extends Component {
             <Icon name="calendar alternate outline" size="massive" />
           </div> */}
           <Card.Content>
-            <Card.Header>title</Card.Header>
+            <Card.Header>{this.props.title}</Card.Header>
             <Card.Meta>
               <span>Host: ___</span>
             </Card.Meta>

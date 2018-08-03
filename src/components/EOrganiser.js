@@ -13,9 +13,10 @@ class EOrganiser extends Component {
       <div className="eorganiser-container">
         <Card.Group centered>
           <CreateEvent />
-          <ESnap />
-          <ESnap />
-          <ESnap />
+          {console.log("in Organiser", this.props.hostedEvents[0])}
+          {this.props.hostedEvents.map(event => {
+            return <ESnap title={event.title}/>
+          })}
         </Card.Group>
       </div>
     );
