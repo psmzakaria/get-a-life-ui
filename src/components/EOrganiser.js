@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Card } from "semantic-ui-react";
 import ESnap from "./ESnap";
-import CreateEvent from "./CreateEvent"
+import CreateEvent from "./CreateEvent";
 
 class EOrganiser extends Component {
   constructor() {
@@ -11,8 +11,9 @@ class EOrganiser extends Component {
   render() {
     return (
       <div className="eorganiser-container">
-        <Card.Group itemsPerRow={3}>
+        <Card.Group centered>
           <CreateEvent />
+          <ESnap />
           <ESnap />
           <ESnap />
         </Card.Group>

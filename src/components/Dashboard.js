@@ -47,7 +47,7 @@ class Home extends Component {
               <h3 id="username-display">{this.state.username}</h3>
             </div>
           </Grid.Column>
-          <Grid.Column width={9}>
+          <Grid.Column width={12}>
             <EOrganiser />
           </Grid.Column>
         </Responsive>
