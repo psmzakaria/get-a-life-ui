@@ -52,6 +52,7 @@ exports[`renders the create component of the app  1`] = `
               Title
             </label>
             <input
+              id="title"
               onChange={[Function]}
               placeholder="Title of the event"
               value=""
@@ -62,6 +63,7 @@ exports[`renders the create component of the app  1`] = `
               Start Date
             </label>
             <input
+              id="start"
               onChange={[Function]}
               placeholder="DD/MM/YYYY"
               value=""
@@ -72,6 +74,7 @@ exports[`renders the create component of the app  1`] = `
               End Date
             </label>
             <input
+              id="end"
               onChange={[Function]}
               placeholder="DD/MM/YYYY"
               value=""
