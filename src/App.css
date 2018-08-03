@@ -30,7 +30,7 @@ body {
 }
 
 .profile-container {
-  height: 800px;
+  height: 100vh;
 }
 
 .container {
@@ -42,6 +42,12 @@ body {
 @media only screen and (max-width: 767px) {
   .container {
     margin: 25px;
+  }
+
+  .profile-container {
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
   }
 }
 

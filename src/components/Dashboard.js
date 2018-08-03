@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { API_URL } from "../utils/configVar";
-import { Grid, Icon } from "semantic-ui-react";
+import { Grid, Icon, Responsive } from "semantic-ui-react";
 import EOrganiser from "./EOrganiser";
 
 class Home extends Component {
@@ -38,10 +38,11 @@ class Home extends Component {
     console.log(this.state.username);
     return (
       <div>
-        <Grid columns={2} divided>
+        <Responsive as={Grid} minWidth={768}>
           <Grid.Column textAlign="center" width={4} color="violet">
             <div className="profile-container">
               <h2>Profile</h2>
+
               <Icon size="huge" inverted color="teal" circular name="user" />
               <h3 id="username-display">{this.state.username}</h3>
             </div>
@@ -49,7 +50,20 @@ class Home extends Component {
           <Grid.Column width={9}>
             <EOrganiser />
           </Grid.Column>
-        </Grid>
+        </Responsive>
+        <Responsive as={Grid} {...Responsive.onlyMobile}>
+          <Grid.Row color="violet">
+            <div className="profile-container">
+              <h2>Profile</h2>
+
+              <Icon size="huge" inverted color="teal" circular name="user" />
+              <h3 id="username-display">{this.state.username}</h3>
+            </div>
+          </Grid.Row>
+          <Grid.Row>
+            <EOrganiser />
+          </Grid.Row>
+        </Responsive>
       </div>
     );
   }
