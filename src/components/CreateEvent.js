@@ -40,7 +40,7 @@ class CreateEvent extends Component {
               <Form>
                 <Form.Field>
                   <label>Title</label>
-                  <input
+                  <input id="title"
                     placeholder="Title of the event"
                     value={this.state.formFields.title}
                     onChange={event => this.handleChange(event, "title")}
@@ -48,7 +48,7 @@ class CreateEvent extends Component {
                 </Form.Field>
                 <Form.Field>
                   <label>Start Date</label>
-                  <input
+                  <input id="start"
                     placeholder="DD/MM/YYYY"
                     value={this.state.formFields.startDate}
                     onChange={event => this.handleChange(event, "startDate")}
@@ -56,7 +56,7 @@ class CreateEvent extends Component {
                 </Form.Field>
                 <Form.Field>
                   <label>End Date</label>
-                  <input
+                  <input id="end"
                     placeholder="DD/MM/YYYY"
                     value={this.state.formFields.endDate}
                     onChange={event => this.handleChange(event, "endDate")}
