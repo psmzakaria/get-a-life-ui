@@ -20,7 +20,7 @@ jobs:
           command: npm test
   deploy:
     docker:
-      - image: buildpack-deps:trusty
+      - image: buildpack-deps:trustyhttps://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git
     steps:
       - checkout
       - run:
