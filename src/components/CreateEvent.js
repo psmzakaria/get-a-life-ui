@@ -34,7 +34,7 @@ class CreateEvent extends Component {
           onClose={this.handleClose}
           closeIcon
         >
-          <Modal.Header>Employer Login</Modal.Header>
+          <Modal.Header>Create Your Event</Modal.Header>
           <Modal.Content image scrolling>
             <Modal.Description>
               <Form>

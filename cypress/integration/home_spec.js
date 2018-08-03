@@ -5,10 +5,7 @@ context("Homepage test", () => {
   before(() => {
     cy.exec("npm run db:reset");
   });
-  beforeEach(() => {
-    cy.visit("http://localhost:3003");
-  });
-
+  ;
   beforeEach(() => {
     cy.visit(URL);
   });
