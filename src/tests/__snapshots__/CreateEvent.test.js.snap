@@ -37,7 +37,7 @@ exports[`renders the book component of the app  1`] = `
     }
   >
     <ModalHeader>
-      Employer Login
+      Create Your Event
     </ModalHeader>
     <ModalContent
       image={true}
