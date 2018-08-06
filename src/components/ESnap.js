@@ -16,7 +16,7 @@ class ESnap extends Component {
           <Card.Content>
             <Card.Header>{this.props.title}</Card.Header>
             <Card.Meta>
-              <span>Host: ___</span>
+              <span>Host: {this.props.host}</span>
             </Card.Meta>
             <Card.Description>Event dates</Card.Description>
           </Card.Content>

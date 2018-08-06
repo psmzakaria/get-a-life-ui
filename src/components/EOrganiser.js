@@ -15,7 +15,7 @@ class EOrganiser extends Component {
           <CreateEvent />
           {console.log("in Organiser", this.props.hostedEvents[0])}
           {this.props.hostedEvents.map(event => {
-            return <ESnap title={event.title}/>
+            return <ESnap title={event.title} host={event.hostId.username}/>
           })}
         </Card.Group>
       </div>
