@@ -8,7 +8,8 @@ class Home extends Component {
     super();
     this.state = {
       username: "",
-      hostedEvents: []
+      hostedEvents: [],
+      statuses: []
     };
   }
 
@@ -27,7 +28,8 @@ class Home extends Component {
       const userData = await response.json();
       this.setState({
         username: userData.username,
-        hostedEvents: userData.hostedEvents
+        hostedEvents: userData.hostedEvents,
+        statuses: userData.statuses
       });
     }
   };
@@ -63,7 +65,7 @@ class Home extends Component {
             </div>
           </Grid.Row>
           <Grid.Row>
-            <EOrganiser hostedEvents={this.state.hostedEvents} />
+            <EOrganiser hostedEvents={this.state.hostedEvents} statuses={this.state.statuses} />
           </Grid.Row>
         </Responsive>
       </div>

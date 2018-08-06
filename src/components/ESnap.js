@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, Icon } from "semantic-ui-react";
+import { Card } from "semantic-ui-react";
 
 class ESnap extends Component {
   constructor() {
@@ -18,12 +18,11 @@ class ESnap extends Component {
             <Card.Meta>
               <span>Host: {this.props.host}</span>
             </Card.Meta>
-            <Card.Description>Event dates</Card.Description>
+            <Card.Description>KIV - information/details</Card.Description>
           </Card.Content>
           <Card.Content extra>
             <a>
-              <Icon name="user" />
-              guest invited
+              {this.props.status}
             </a>
           </Card.Content>
         </Card>
