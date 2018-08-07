@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the create component of the app  1`] = `
+<div
+  className="eorganiser-container"
+>
+  <h2>
+     Your Hosted Events
+  </h2>
+  <CardGroup
+    centered={true}
+  >
+    
+  </CardGroup>
+  <Divider />
+  <h2>
+     Your Invited Events
+  </h2>
+  <CardGroup
+    centered={true}
+  >
+    
+  </CardGroup>
+  <Divider />
+  <h2>
+     You have a life
+  </h2>
+</div>
+`;

@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the create component of the app  1`] = `
+<div
+  className="esnap-container-size"
+>
+  <Modal
+    centered={true}
+    closeIcon={true}
+    closeOnDimmerClick={true}
+    closeOnDocumentClick={false}
+    dimmer={true}
+    eventPool="Modal"
+    onClose={undefined}
+    open={undefined}
+    trigger={
+      <Card
+        color="red"
+      >
+        <CardContent>
+          <CardHeader>
+            birthday
+          </CardHeader>
+          <CardMeta>
+            <span>
+              Host: 
+              lala
+            </span>
+          </CardMeta>
+          <CardDescription>
+            KIV - information/details
+          </CardDescription>
+        </CardContent>
+        <CardContent
+          extra={true}
+        />
+      </Card>
+    }
+  >
+    <ModalHeader>
+      birthday
+    </ModalHeader>
+    <ModalContent>
+      <ModalDescription>
+        lala
+        <Button
+          as="button"
+          onClick={undefined}
+          role="button"
+          type="submit"
+        >
+          Accept
+        </Button>
+      </ModalDescription>
+    </ModalContent>
+  </Modal>
+</div>
+`;

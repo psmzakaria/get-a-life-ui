@@ -3,14 +3,7 @@ import { Card, Divider } from "semantic-ui-react";
 import ESnap from "./ESnap";
 
 const getESnap = (event, status) => {
-  return (
-    <ESnap
-      key={event._id}
-      title={event.title}
-      host={event.hostId.username}
-      status={status}
-    />
-  );
+  return <ESnap key={event._id} event={event} status={status} />;
 };
 
 const EOrganiser = props => {
