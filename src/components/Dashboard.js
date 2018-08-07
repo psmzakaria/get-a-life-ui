@@ -95,7 +95,15 @@ class Home extends Component {
             </div>
           </Grid.Column>
           <Grid.Column width={12}>
-            <EOrganiser hostedEvents={this.state.hostedEvents} />
+            <EOrganiser 
+              hostedEvents={this.state.hostedEvents}
+              statuses={this.state.statuses}
+              handleSubmit={this.handleSubmit}
+              handleChange={this.handleChange}
+              formFields={this.state.formFields}
+              modalOpen={this.state.modalOpen}
+              handleOpen={this.handleOpen}
+              handleClose={this.handleClose}/>
           </Grid.Column>
         </Responsive>
         <Responsive as={Grid} {...Responsive.onlyMobile}>
