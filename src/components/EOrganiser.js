@@ -21,6 +21,16 @@ class EOrganiser extends Component {
               />
             );
           })}
+          {this.props.invitedEvents.map((event, index) => {
+            return (
+              <ESnap
+                key={event._id}
+                title={event.title}
+                host={event.hostId.username}
+                status={this.props.statuses[index]}
+              />
+            );
+          })}
         </Card.Group>
       </div>
     );

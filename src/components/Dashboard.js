@@ -10,6 +10,7 @@ class Home extends Component {
     this.state = {
       username: "",
       hostedEvents: [],
+      invitedEvents: [],
       statuses: [],
       formFields: {
         title: "",
@@ -74,6 +75,7 @@ class Home extends Component {
       this.setState({
         username: userData.username,
         hostedEvents: userData.hostedEvents,
+        invitedEvents: userData.invitedEvents,
         statuses: userData.statuses
       });
     }
@@ -106,6 +108,7 @@ class Home extends Component {
           <Grid.Column width={12}>
             <EOrganiser
               hostedEvents={this.state.hostedEvents}
+              invitedEvents={this.state.invitedEvents}
               statuses={this.state.statuses}
               handleSubmit={this.handleSubmit}
               handleChange={this.handleChange}
@@ -136,6 +139,7 @@ class Home extends Component {
           <Grid.Row>
             <EOrganiser
               hostedEvents={this.state.hostedEvents}
+              invitedEvents={this.state.invitedEvents}
               statuses={this.state.statuses}
               handleSubmit={this.handleSubmit}
               handleChange={this.handleChange}
