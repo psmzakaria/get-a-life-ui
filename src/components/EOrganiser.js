@@ -7,34 +7,32 @@ class EOrganiser extends Component {
     super();
     this.state = {};
   }
+
+  getESnap = (event, status) => {
+    return (
+      <ESnap
+        key={event._id}
+        title={event.title}
+        host={event.hostId.username}
+        status={status}
+      />
+    );
+  };
+
   render() {
     return (
       <div className="eorganiser-container">
         <h2> Your Hosted Events</h2>
         <Card.Group centered>
           {this.props.hostedEvents.map((event, index) => {
-            return (
-              <ESnap
-                key={event._id}
-                title={event.title}
-                host={event.hostId.username}
-                status={this.props.statuses[index]}
-              />
-            );
+            return this.getESnap(event, this.props.statuses[index]);
           })}
         </Card.Group>
         <Divider />
         <h2> Your Invited Events</h2>
         <Card.Group centered>
           {this.props.invitedEvents.map((event, index) => {
-            return (
-              <ESnap
-                key={event._id}
-                title={event.title}
-                host={event.hostId.username}
-                status={this.props.statuses[index]}
-              />
-            );
+            return this.getESnap(event, this.props.statuses[index]);
           })}
         </Card.Group>
         <Divider />

@@ -34,7 +34,7 @@ context("Eventpage test", () => {
     cy.get(".ui.centered.cards")
       .children()
       .should($div => {
-        expect($div).to.have.length(2);
+        expect($div).to.have.length(1);
       });
   });
 });
