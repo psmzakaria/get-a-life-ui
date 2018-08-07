@@ -58,6 +58,25 @@ class Home extends Component {
     });
   };
 
+  getProfileDiv = () => {
+    return (
+      <div className="profile-container">
+        <h2>Profile</h2>
+
+        <Icon size="huge" inverted color="teal" circular name="user" />
+        <h3 id="username-display">{this.state.username}</h3>
+        <CreateEvent
+          handleSubmit={this.handleSubmit}
+          handleChange={this.handleChange}
+          formFields={this.state.formFields}
+          modalOpen={this.state.modalOpen}
+          handleOpen={this.handleOpen}
+          handleClose={this.handleClose}
+        />
+      </div>
+    );
+  };
+
   getUserData = async () => {
     const username = this.props.location.pathname.split("/")[1];
 
@@ -81,6 +100,21 @@ class Home extends Component {
     }
   };
 
+  getEorganise = () => {
+    return (
+      <EOrganiser
+        hostedEvents={this.state.hostedEvents}
+        invitedEvents={this.state.invitedEvents}
+        statuses={this.state.statuses}
+        handleSubmit={this.handleSubmit}
+        handleChange={this.handleChange}
+        formFields={this.state.formFields}
+        modalOpen={this.state.modalOpen}
+        handleOpen={this.handleOpen}
+        handleClose={this.handleClose}
+      />
+    );
+  };
   componentDidMount = () => {
     this.getUserData();
   };
@@ -90,65 +124,13 @@ class Home extends Component {
       <div>
         <Responsive as={Grid} minWidth={768}>
           <Grid.Column textAlign="center" width={4} color="violet">
-            <div className="profile-container">
-              <h2>Profile</h2>
-
-              <Icon size="huge" inverted color="teal" circular name="user" />
-              <h3 id="username-display">{this.state.username}</h3>
-              <CreateEvent
-                handleSubmit={this.handleSubmit}
-                handleChange={this.handleChange}
-                formFields={this.state.formFields}
-                modalOpen={this.state.modalOpen}
-                handleOpen={this.handleOpen}
-                handleClose={this.handleClose}
-              />
-            </div>
+            {this.getProfileDiv()}
           </Grid.Column>
-          <Grid.Column width={12}>
-            <EOrganiser
-              hostedEvents={this.state.hostedEvents}
-              invitedEvents={this.state.invitedEvents}
-              statuses={this.state.statuses}
-              handleSubmit={this.handleSubmit}
-              handleChange={this.handleChange}
-              formFields={this.state.formFields}
-              modalOpen={this.state.modalOpen}
-              handleOpen={this.handleOpen}
-              handleClose={this.handleClose}
-            />
-          </Grid.Column>
+          <Grid.Column width={12}>{this.getEorganise()}</Grid.Column>
         </Responsive>
         <Responsive as={Grid} {...Responsive.onlyMobile}>
-          <Grid.Row color="violet">
-            <div className="profile-container">
-              <h2>Profile</h2>
-
-              <Icon size="huge" inverted color="teal" circular name="user" />
-              <h3 id="username-display">{this.state.username}</h3>
-              <CreateEvent
-                handleSubmit={this.handleSubmit}
-                handleChange={this.handleChange}
-                formFields={this.state.formFields}
-                modalOpen={this.state.modalOpen}
-                handleOpen={this.handleOpen}
-                handleClose={this.handleClose}
-              />
-            </div>
-          </Grid.Row>
-          <Grid.Row>
-            <EOrganiser
-              hostedEvents={this.state.hostedEvents}
-              invitedEvents={this.state.invitedEvents}
-              statuses={this.state.statuses}
-              handleSubmit={this.handleSubmit}
-              handleChange={this.handleChange}
-              formFields={this.state.formFields}
-              modalOpen={this.state.modalOpen}
-              handleOpen={this.handleOpen}
-              handleClose={this.handleClose}
-            />
-          </Grid.Row>
+          <Grid.Row color="violet">{this.getProfileDiv()}</Grid.Row>
+          <Grid.Row>{this.getEorganise()}</Grid.Row>
         </Responsive>
       </div>
     );
