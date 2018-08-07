@@ -12,10 +12,23 @@ class EOrganiser extends Component {
     return (
       <div className="eorganiser-container">
         <Card.Group centered>
-          <CreateEvent />
-          {console.log("in Organiser", this.props.hostedEvents[0])}
-          {this.props.hostedEvents.map((event,index) => {
-            return <ESnap title={event.title} host={event.hostId.username} status={this.props.statuses[index]}/>
+          <CreateEvent
+            handleSubmit={this.props.handleSubmit}
+            handleChange={this.props.handleChange}
+            formFields={this.props.formFields}
+            modalOpen={this.props.modalOpen}
+            handleOpen={this.props.handleOpen}
+            handleClose={this.props.handleClose}
+          />
+          {this.props.hostedEvents.map((event, index) => {
+            return (
+              <ESnap
+                key={event._id}
+                title={event.title}
+                host={event.hostId.username}
+                status={this.props.statuses[index]}
+              />
+            );
           })}
         </Card.Group>
       </div>

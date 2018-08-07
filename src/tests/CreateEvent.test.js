@@ -5,7 +5,13 @@ import ShallowRenderer from "react-test-renderer/shallow";
 
 it("renders the create component of the app ", () => {
   const renderer = new ShallowRenderer();
-  renderer.render(<CreateEvent />);
+  const formFields = {
+    title: "",
+    startDate: "",
+    endDate: ""
+  };
+
+  renderer.render(<CreateEvent formFields={formFields} />);
   const output = renderer.getRenderOutput();
   expect(output).toMatchSnapshot();
 });

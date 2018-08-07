@@ -9,14 +9,14 @@ exports[`renders the create component of the app  1`] = `
     closeOnDocumentClick={false}
     dimmer={true}
     eventPool="Modal"
-    onClose={[Function]}
-    open={false}
+    onClose={undefined}
+    open={undefined}
     trigger={
       <div
         className="esnap-container-size"
       >
         <Card
-          onClick={[Function]}
+          onClick={undefined}
         >
           <div
             className="esnap-icon"
@@ -82,7 +82,7 @@ exports[`renders the create component of the app  1`] = `
           </FormField>
           <Button
             as="button"
-            onClick={[Function]}
+            onClick={undefined}
             role="button"
             type="submit"
           >

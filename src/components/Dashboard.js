@@ -9,12 +9,56 @@ class Home extends Component {
     this.state = {
       username: "",
       hostedEvents: [],
-      statuses: []
+      statuses: [],
+      formFields: {
+        title: "",
+        startDate: "",
+        endDate: ""
+      },
+      modalOpen: false
     };
   }
 
+  handleOpen = () => this.setState({ modalOpen: true });
+  handleClose = () => this.setState({ modalOpen: false });
+  handleChange = (event, propertyName) => {
+    const formFields = this.state.formFields;
+    formFields[propertyName] = event.target.value;
+    this.setState({
+      formFields: formFields
+    });
+  };
+
+  handleSubmit = async event => {
+    event.preventDefault();
+    this.setState({
+      modalOpen: false
+    });
+
+    const response = await fetch(`${API_URL}/events/create`, {
+      method: "POST",
+      credentials: "include",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        title: this.state.formFields.title,
+        startDate: this.state.formFields.startDate,
+        endDate: this.state.formFields.endDate
+      })
+    });
+
+    const data = await response.json();
+
+    this.setState({
+      hostedEvents: [...this.state.hostedEvents, data]
+    });
+  };
+
   getUserData = async () => {
     const username = this.props.location.pathname.split("/")[1];
+
     const response = await fetch(`${API_URL}/users/${username}`, {
       method: "GET",
       credentials: "include",
@@ -39,7 +83,6 @@ class Home extends Component {
   };
 
   render() {
-    console.log(this.state.username);
     return (
       <div>
         <Responsive as={Grid} minWidth={768}>
@@ -65,7 +108,16 @@ class Home extends Component {
             </div>
           </Grid.Row>
           <Grid.Row>
-            <EOrganiser hostedEvents={this.state.hostedEvents} statuses={this.state.statuses} />
+            <EOrganiser
+              hostedEvents={this.state.hostedEvents}
+              statuses={this.state.statuses}
+              handleSubmit={this.handleSubmit}
+              handleChange={this.handleChange}
+              formFields={this.state.formFields}
+              modalOpen={this.state.modalOpen}
+              handleOpen={this.handleOpen}
+              handleClose={this.handleClose}
+            />
           </Grid.Row>
         </Responsive>
       </div>
