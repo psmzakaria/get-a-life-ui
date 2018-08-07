@@ -4,7 +4,7 @@ import { Grid, Icon, Responsive } from "semantic-ui-react";
 import EOrganiser from "./EOrganiser";
 import CreateEvent from "./CreateEvent";
 
-class Home extends Component {
+class Dashboard extends Component {
   constructor() {
     super();
     this.state = {
@@ -21,8 +21,37 @@ class Home extends Component {
     };
   }
 
+  componentDidMount = () => {
+    this.getUserData();
+  };
+
+  getUserData = async () => {
+    const username = this.props.location.pathname.split("/")[1];
+
+    const response = await fetch(`${API_URL}/users/${username}`, {
+      method: "GET",
+      credentials: "include",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      }
+    });
+
+    if (response.ok) {
+      const userData = await response.json();
+      this.setState({
+        username: userData.username,
+        hostedEvents: userData.hostedEvents,
+        invitedEvents: userData.invitedEvents,
+        statuses: userData.statuses
+      });
+    }
+  };
+
   handleOpen = () => this.setState({ modalOpen: true });
+
   handleClose = () => this.setState({ modalOpen: false });
+
   handleChange = (event, propertyName) => {
     const formFields = this.state.formFields;
     formFields[propertyName] = event.target.value;
@@ -58,7 +87,7 @@ class Home extends Component {
     });
   };
 
-  getProfileDiv = () => {
+  renderProfileDiv = () => {
     return (
       <div className="profile-container">
         <h2>Profile</h2>
@@ -77,30 +106,7 @@ class Home extends Component {
     );
   };
 
-  getUserData = async () => {
-    const username = this.props.location.pathname.split("/")[1];
-
-    const response = await fetch(`${API_URL}/users/${username}`, {
-      method: "GET",
-      credentials: "include",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      }
-    });
-
-    if (response.ok) {
-      const userData = await response.json();
-      this.setState({
-        username: userData.username,
-        hostedEvents: userData.hostedEvents,
-        invitedEvents: userData.invitedEvents,
-        statuses: userData.statuses
-      });
-    }
-  };
-
-  getEorganise = () => {
+  renderEOrganiseDiv = () => {
     return (
       <EOrganiser
         hostedEvents={this.state.hostedEvents}
@@ -115,26 +121,23 @@ class Home extends Component {
       />
     );
   };
-  componentDidMount = () => {
-    this.getUserData();
-  };
 
   render() {
     return (
       <div>
         <Responsive as={Grid} minWidth={768}>
           <Grid.Column textAlign="center" width={4} color="violet">
-            {this.getProfileDiv()}
+            {this.renderProfileDiv()}
           </Grid.Column>
-          <Grid.Column width={12}>{this.getEorganise()}</Grid.Column>
+          <Grid.Column width={12}>{this.renderEOrganiseDiv()}</Grid.Column>
         </Responsive>
         <Responsive as={Grid} {...Responsive.onlyMobile}>
-          <Grid.Row color="violet">{this.getProfileDiv()}</Grid.Row>
-          <Grid.Row>{this.getEorganise()}</Grid.Row>
+          <Grid.Row color="violet">{this.renderProfileDiv()}</Grid.Row>
+          <Grid.Row>{this.renderEOrganiseDiv()}</Grid.Row>
         </Responsive>
       </div>
     );
   }
 }
 
-export default Home;
+export default Dashboard;
