@@ -28,7 +28,13 @@ exports[`renders the create component of the app  1`] = `
             </span>
           </CardMeta>
           <CardDescription>
-            KIV - information/details
+             
+            <Icon
+              as="i"
+              name="list"
+              size="small"
+            />
+             KIV - 
           </CardDescription>
         </CardContent>
         <CardContent
@@ -43,13 +49,30 @@ exports[`renders the create component of the app  1`] = `
     <ModalContent>
       <ModalDescription>
         lala
+        <br />
+        <strong>
+           Description:
+        </strong>
+         
+        <br />
+        <br />
         <Button
           as="button"
+          floated="right"
           onClick={undefined}
           role="button"
           type="submit"
         >
           Accept
+        </Button>
+        <Button
+          as="button"
+          floated="right"
+          onClick={undefined}
+          role="button"
+          type="submit"
+        >
+          Reject
         </Button>
       </ModalDescription>
     </ModalContent>
