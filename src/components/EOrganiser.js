@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Card } from "semantic-ui-react";
 import ESnap from "./ESnap";
-import CreateEvent from "./CreateEvent";
 
 class EOrganiser extends Component {
   constructor() {
@@ -12,14 +11,6 @@ class EOrganiser extends Component {
     return (
       <div className="eorganiser-container">
         <Card.Group centered>
-          <CreateEvent
-            handleSubmit={this.props.handleSubmit}
-            handleChange={this.props.handleChange}
-            formFields={this.props.formFields}
-            modalOpen={this.props.modalOpen}
-            handleOpen={this.props.handleOpen}
-            handleClose={this.props.handleClose}
-          />
           {this.props.hostedEvents.map((event, index) => {
             return (
               <ESnap

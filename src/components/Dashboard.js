@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { API_URL } from "../utils/configVar";
 import { Grid, Icon, Responsive } from "semantic-ui-react";
 import EOrganiser from "./EOrganiser";
+import CreateEvent from "./CreateEvent";
 
 class Home extends Component {
   constructor() {
@@ -92,10 +93,18 @@ class Home extends Component {
 
               <Icon size="huge" inverted color="teal" circular name="user" />
               <h3 id="username-display">{this.state.username}</h3>
+              <CreateEvent
+                handleSubmit={this.handleSubmit}
+                handleChange={this.handleChange}
+                formFields={this.state.formFields}
+                modalOpen={this.state.modalOpen}
+                handleOpen={this.handleOpen}
+                handleClose={this.handleClose}
+              />
             </div>
           </Grid.Column>
           <Grid.Column width={12}>
-            <EOrganiser 
+            <EOrganiser
               hostedEvents={this.state.hostedEvents}
               statuses={this.state.statuses}
               handleSubmit={this.handleSubmit}
@@ -103,7 +112,8 @@ class Home extends Component {
               formFields={this.state.formFields}
               modalOpen={this.state.modalOpen}
               handleOpen={this.handleOpen}
-              handleClose={this.handleClose}/>
+              handleClose={this.handleClose}
+            />
           </Grid.Column>
         </Responsive>
         <Responsive as={Grid} {...Responsive.onlyMobile}>
@@ -113,6 +123,14 @@ class Home extends Component {
 
               <Icon size="huge" inverted color="teal" circular name="user" />
               <h3 id="username-display">{this.state.username}</h3>
+              <CreateEvent
+                handleSubmit={this.handleSubmit}
+                handleChange={this.handleChange}
+                formFields={this.state.formFields}
+                modalOpen={this.state.modalOpen}
+                handleOpen={this.handleOpen}
+                handleClose={this.handleClose}
+              />
             </div>
           </Grid.Row>
           <Grid.Row>
