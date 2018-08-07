@@ -10,6 +10,7 @@ class EOrganiser extends Component {
   render() {
     return (
       <div className="eorganiser-container">
+        <h2> Your Hosted Events</h2>
         <Card.Group centered>
           {this.props.hostedEvents.map((event, index) => {
             return (
@@ -23,6 +24,7 @@ class EOrganiser extends Component {
           })}
         </Card.Group>
         <Divider />
+        <h2> Your Invited Events</h2>
         <Card.Group centered>
           {this.props.invitedEvents.map((event, index) => {
             return (
@@ -35,6 +37,8 @@ class EOrganiser extends Component {
             );
           })}
         </Card.Group>
+        <Divider />
+        <h2> You have a life</h2>
       </div>
     );
   }
