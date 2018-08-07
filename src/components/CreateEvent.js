@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Form, Modal, Card, Icon } from 'semantic-ui-react';
+import { Form, Modal, Card, Icon } from 'semantic-ui-react';
 import { API_URL } from '../utils/configVar';
 import CreateInvitationModal from './CreateInvitationModal';
 
