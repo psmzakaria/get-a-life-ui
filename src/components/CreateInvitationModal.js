@@ -4,7 +4,7 @@ import { Button, Modal, Icon } from 'semantic-ui-react';
 import { API_URL } from '../utils/configVar';
 import SearchUsernameBar from './SearchUsernameBar';
 import InvitationList from './InvitationList';
-import { timingSafeEqual } from 'crypto';
+// import { timingSafeEqual } from 'crypto';
 
 class CreateInvitationModal extends Component {
 	constructor() {
