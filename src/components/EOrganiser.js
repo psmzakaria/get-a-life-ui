@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card } from "semantic-ui-react";
+import { Card, Divider } from "semantic-ui-react";
 import ESnap from "./ESnap";
 
 class EOrganiser extends Component {
@@ -21,6 +21,9 @@ class EOrganiser extends Component {
               />
             );
           })}
+        </Card.Group>
+        <Divider />
+        <Card.Group centered>
           {this.props.invitedEvents.map((event, index) => {
             return (
               <ESnap
