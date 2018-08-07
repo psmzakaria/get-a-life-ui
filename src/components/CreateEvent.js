@@ -31,25 +31,25 @@ const CreateEvent = props => {
                   id="title"
                   placeholder="Title of the event"
                   value={props.formFields.title}
-                  onChange={event => props.handleChange(event, "title")}
+                  onChange={props.handleChange}
                 />
               </Form.Field>
               <Form.Field>
                 <label>Start Date</label>
                 <input
-                  id="start"
+                  id="startDate"
                   placeholder="DD/MM/YYYY"
                   value={props.formFields.startDate}
-                  onChange={event => props.handleChange(event, "startDate")}
+                  onChange={props.handleChange}
                 />
               </Form.Field>
               <Form.Field>
                 <label>End Date</label>
                 <input
-                  id="end"
+                  id="endDate"
                   placeholder="DD/MM/YYYY"
                   value={props.formFields.endDate}
-                  onChange={event => props.handleChange(event, "endDate")}
+                  onChange={props.handleChange}
                 />
               </Form.Field>
               <Button type="submit" onClick={props.handleSubmit}>

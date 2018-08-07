@@ -52,9 +52,9 @@ class Dashboard extends Component {
 
   handleClose = () => this.setState({ modalOpen: false });
 
-  handleChange = (event, propertyName) => {
+  handleChange = event => {
     const formFields = this.state.formFields;
-    formFields[propertyName] = event.target.value;
+    formFields[event.target.id] = event.target.value;
     this.setState({
       formFields: formFields
     });
