@@ -70,7 +70,7 @@ class Home extends Component {
   handleOnSubmit = async event => {
     event.preventDefault();
 
-    const response = await fetch(`${API_URL}/users/${event.target.id}`, {
+    const response = await fetch(`${API_URL}/account/${event.target.id}`, {
       method: "POST",
       credentials: "include",
       headers: {
