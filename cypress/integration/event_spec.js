@@ -21,16 +21,20 @@ context("Eventpage test", () => {
       .clear()
       .type("My New Event")
       .should("have.value", "My New Event");
-      cy.get("#start")
+    cy.get("#start")
       .clear()
       .type("10/08/2018")
       .should("have.value", "10/08/2018");
-      cy.get("#end")      
+    cy.get("#end")
       .clear()
       .type("25/08/2018")
       .should("have.value", "25/08/2018");
-		cy.get('.ui.button').click();
-
-      
+    cy.get(".ui.button").click();
+    cy.get(".esnap-container-size");
+    cy.get(".ui.centered.cards")
+      .children()
+      .should($div => {
+        expect($div).to.have.length(2);
+      });
   });
 });
