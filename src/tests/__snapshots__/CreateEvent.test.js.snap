@@ -9,14 +9,14 @@ exports[`renders the create component of the app  1`] = `
     closeOnDocumentClick={false}
     dimmer={true}
     eventPool="Modal"
-    onClose={undefined}
-    open={undefined}
+    onClose={[Function]}
+    open={false}
     trigger={
       <div
         className="esnap-container-size"
       >
         <Card
-          onClick={undefined}
+          onClick={[Function]}
         >
           <div
             className="esnap-icon"
@@ -53,7 +53,7 @@ exports[`renders the create component of the app  1`] = `
             </label>
             <input
               id="title"
-              onChange={undefined}
+              onChange={[Function]}
               placeholder="Title of the event"
               value=""
             />
@@ -63,8 +63,8 @@ exports[`renders the create component of the app  1`] = `
               Start Date
             </label>
             <input
-              id="startDate"
-              onChange={undefined}
+              id="start"
+              onChange={[Function]}
               placeholder="DD/MM/YYYY"
               value=""
             />
@@ -74,23 +74,20 @@ exports[`renders the create component of the app  1`] = `
               End Date
             </label>
             <input
-              id="endDate"
-              onChange={undefined}
+              id="end"
+              onChange={[Function]}
               placeholder="DD/MM/YYYY"
               value=""
             />
           </FormField>
-          <Button
-            as="button"
-            onClick={undefined}
-            role="button"
-            type="submit"
-          >
-            Submit
-          </Button>
         </Form>
       </ModalDescription>
     </ModalContent>
+    <ModalActions>
+      <CreateInvitationModal
+        handleSubmit={[Function]}
+      />
+    </ModalActions>
   </Modal>
 </div>
 `;
