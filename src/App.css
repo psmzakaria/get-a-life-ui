@@ -23,6 +23,13 @@ body {
   cursor: pointer;
 }
 
+.esnap-create-event {
+  width: 200px;
+  height: 100%;
+  margin: auto;
+  cursor: pointer;
+}
+
 .esnap-icon {
   margin: auto;
   margin-top: 20px;
