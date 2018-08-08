@@ -7,18 +7,14 @@ exports[`renders the create component of the app  1`] = `
   <h2>
      Your Hosted Events
   </h2>
-  <CardGroup
-    centered={true}
-  >
+  <CardGroup>
     
   </CardGroup>
   <Divider />
   <h2>
      Your Invited Events
   </h2>
-  <CardGroup
-    centered={true}
-  >
+  <CardGroup>
     
   </CardGroup>
   <Divider />
