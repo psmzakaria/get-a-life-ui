@@ -17,7 +17,7 @@ const EOrganiser = props => {
           })}
         </Card.Group>
       )}
-      {props.hostedEvents.lenght === 0 && (
+      {props.hostedEvents.length === 0 && (
         <Header as="h2" textAlign="center" disabled>
           You have no hosted events
         </Header>

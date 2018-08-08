@@ -7,6 +7,13 @@ exports[`renders the create component of the app  1`] = `
   <h2>
      Your Hosted Events
   </h2>
+  <Header
+    as="h2"
+    disabled={true}
+    textAlign="center"
+  >
+    You have no hosted events
+  </Header>
   <Divider />
   <h2>
      Your Invited Events
