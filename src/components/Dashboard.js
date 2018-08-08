@@ -60,12 +60,6 @@ class Dashboard extends Component {
         hostedEvents={this.state.hostedEvents}
         invitedEvents={this.state.invitedEvents}
         statuses={this.state.statuses}
-        handleSubmit={this.handleSubmit}
-        handleChange={this.handleChange}
-        formFields={this.state.formFields}
-        modalOpen={this.state.modalOpen}
-        handleOpen={this.handleOpen}
-        handleClose={this.handleClose}
       />
     );
   };
