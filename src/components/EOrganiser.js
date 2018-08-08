@@ -38,9 +38,18 @@ const EOrganiser = props => {
       )}
       <Divider />
       <h2> You have a life</h2>
-      <Header as="h2" textAlign="center" disabled>
-        Soon...
-      </Header>
+      {props.acceptedEvents.length > 0 && (
+        <Card.Group>
+          {props.acceptedEvents.map((event, index) => {
+            return getESnap(event, props.statuses[index]);
+          })}
+        </Card.Group>
+      )}
+      {props.acceptedEvents.length === 0 && (
+        <Header as="h2" textAlign="center" disabled>
+          Soon ...
+        </Header>
+      )}
     </div>
   );
 };

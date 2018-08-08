@@ -11,6 +11,7 @@ class Dashboard extends Component {
       username: "",
       hostedEvents: [],
       invitedEvents: [],
+      acceptedEvents: [],
       statuses: []
     };
   }
@@ -37,6 +38,7 @@ class Dashboard extends Component {
         username: userData.username,
         hostedEvents: userData.hostedEvents,
         invitedEvents: userData.invitedEvents,
+        acceptedEvents: userData.acceptedEvents,
         statuses: userData.statuses
       });
     }
@@ -59,6 +61,7 @@ class Dashboard extends Component {
       <EOrganiser
         hostedEvents={this.state.hostedEvents}
         invitedEvents={this.state.invitedEvents}
+        acceptedEvents={this.state.acceptedEvents}
         statuses={this.state.statuses}
       />
     );
