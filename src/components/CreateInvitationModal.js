@@ -91,11 +91,12 @@ class CreateInvitationModal extends Component {
 		});
 	};
 
-	handleSubmitTest = (e) => {
+	handleSubmitInvitees = (e) => {
 		if (this.state.invitees.length === 0) {
 			alert('Please add invitees');
 		} else {
-			return this.props.handleSubmit(e, this.state.invitees);
+      return this.props.handleSubmit(e, this.state.invitees);
+      
 		}
 	};
 
@@ -129,7 +130,7 @@ class CreateInvitationModal extends Component {
 					</Modal.Description>
 				</Modal.Content>
 				<Modal.Actions>
-					<Button icon="check" content="All Done" onClick={this.handleSubmitTest} />
+					<Button icon="check" content="All Done" onClick={this.handleSubmitInvitees} />
 				</Modal.Actions>
 			</Modal>
 		);

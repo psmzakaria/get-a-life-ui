@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { Form, Modal, Button, Icon } from "semantic-ui-react";
-import { API_URL } from "../utils/configVar";
-import CreateInvitationModal from "./CreateInvitationModal";
+import React, { Component } from 'react';
+import { Form, Modal, Button, Icon } from 'semantic-ui-react';
+import { API_URL } from '../utils/configVar';
+import CreateInvitationModal from './CreateInvitationModal';
 
 class CreateEvent extends Component {
   constructor() {
@@ -29,7 +29,6 @@ class CreateEvent extends Component {
   };
 
   handleSubmit = async (event, invitees) => {
-    console.log("invitees", invitees);
     event.preventDefault();
     this.setState({
       modalOpen: false
