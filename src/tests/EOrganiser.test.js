@@ -7,7 +7,7 @@ it("renders the create component of the app ", () => {
   const renderer = new ShallowRenderer();
 
   renderer.render(
-    <EOrganiser hostedEvents={[]} statuses={[]} invitedEvents={[]} />
+    <EOrganiser hostedEvents={[]} statuses={[]} invitedEvents={[]} acceptedEvents={[]}/>
   );
   const output = renderer.getRenderOutput();
 

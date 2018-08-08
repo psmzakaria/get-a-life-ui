@@ -34,7 +34,7 @@ exports[`renders the create component of the app  1`] = `
     disabled={true}
     textAlign="center"
   >
-    Soon...
+    Soon ...
   </Header>
 </div>
 `;
