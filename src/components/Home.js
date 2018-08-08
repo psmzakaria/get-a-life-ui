@@ -95,7 +95,7 @@ class Home extends Component {
           signUpError: {
             hidden: false,
             header: "Error",
-            content: data.errors.message
+            content: data
           }
         });
       } else {
