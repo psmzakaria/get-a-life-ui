@@ -13,7 +13,7 @@ exports[`renders the create component of the app  1`] = `
     open={false}
     trigger={
       <div
-        className="esnap-container-size"
+        className="esnap-create-event"
       >
         <Card
           onClick={[Function]}
