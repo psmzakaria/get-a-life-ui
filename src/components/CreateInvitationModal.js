@@ -89,33 +89,15 @@ class CreateInvitationModal extends Component {
 				...this.state.invitees.slice(indexToRemove + 1)
 			]
 		});
-  };
-  
-  handleSubmitTest = (e) => {
-    return this.props.handleSubmit(e,this.state.invitees)
-  }
+	};
 
-	// handleSendInvitees = (event) => {
-	//   event.preventDefault();
-	//   this.close()
-	// 	// this.setState({
-	// 	// 	open: false
-	// 	// });
-
-	// 	fetch(`${API_URL}/events/create`, {
-	// 		method: 'POST',
-	// 		credentials: 'include',
-	// 		headers: {
-	// 			Accept: 'application/json',
-	// 			'Content-Type': 'application/json'
-	// 		},
-	// 		body: JSON.stringify({
-	// 			title: this.state.formFields.title,
-	// 			startDate: this.state.formFields.startDate,
-	// 			endDate: this.state.formFields.endDate
-	// 		})
-	// 	});
-	// };
+	handleSubmitTest = (e) => {
+		if (this.state.invitees.length === 0) {
+			alert('Please add invitees');
+		} else {
+			return this.props.handleSubmit(e, this.state.invitees);
+		}
+	};
 
 	render() {
 		return (

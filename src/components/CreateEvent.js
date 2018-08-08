@@ -68,47 +68,46 @@ class CreateEvent extends Component {
                 {/* <Button type="submit" onClick={this.handleSubmit}>
 									Submit
 								</Button> */}
-              </Form>
-            </Modal.Description>
-          </Modal.Content>
-          <Modal.Actions>
-            <CreateInvitationModal handleSubmit={this.handleSubmit} />
-          </Modal.Actions>
-        </Modal>
-      </div>
-    );
-  }
-  handleOpen = () => this.setState({ modalOpen: true });
-  handleClose = () => this.setState({ modalOpen: false });
-  handleChange = (event, propertyName) => {
-    const formFields = this.state.formFields;
-    formFields[propertyName] = event.target.value;
-    this.setState({
-      formFields: formFields
-    });
-  };
-  handleSubmit = (event, invitees) => {
-    console.log("invitees", invitees);
-    event.preventDefault();
-    this.setState({
-      modalOpen: false
-    });
+							</Form>
+						</Modal.Description>
+					</Modal.Content>
+					<Modal.Actions>
+						<CreateInvitationModal handleSubmit={this.handleSubmit}/>
+					</Modal.Actions>
+				</Modal>
+			</div>
+		);
+	}
+	handleOpen = () => this.setState({ modalOpen: true });
+	handleClose = () => this.setState({ modalOpen: false });
+	handleChange = (event, propertyName) => {
+		const formFields = this.state.formFields;
+		formFields[propertyName] = event.target.value;
+		this.setState({
+			formFields: formFields
+		});
+	};
+	handleSubmit = (event,invitees) => {
+		event.preventDefault();
+		this.setState({
+			modalOpen: false
+		});
 
-    fetch(`${API_URL}/events/create`, {
-      method: "POST",
-      credentials: "include",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        title: this.state.formFields.title,
-        startDate: this.state.formFields.startDate,
-        endDate: this.state.formFields.endDate,
-        attendees: invitees
-      })
-    });
-  };
+		fetch(`${API_URL}/events/create`, {
+			method: 'POST',
+			credentials: 'include',
+			headers: {
+				Accept: 'application/json',
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				title: this.state.formFields.title,
+				startDate: this.state.formFields.startDate,
+				endDate: this.state.formFields.endDate,
+				attendees: invitees 
+			})
+		});
+	};
 }
 
 export default CreateEvent;
