@@ -15,6 +15,46 @@ class CreateEvent extends Component {
       modalOpen: false
     };
   }
+
+  handleOpen = () => this.setState({ modalOpen: true });
+
+  handleClose = () => this.setState({ modalOpen: false });
+
+  handleChange = (event, propertyName) => {
+    const formFields = this.state.formFields;
+    formFields[propertyName] = event.target.value;
+    this.setState({
+      formFields: formFields
+    });
+  };
+
+  handleSubmit = async (event, invitees) => {
+    console.log("invitees", invitees);
+    event.preventDefault();
+    this.setState({
+      modalOpen: false
+    });
+
+    const response = await fetch(`${API_URL}/events/create`, {
+      method: "POST",
+      credentials: "include",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        title: this.state.formFields.title,
+        startDate: this.state.formFields.startDate,
+        endDate: this.state.formFields.endDate,
+        attendees: invitees
+      })
+    });
+
+    if (response.ok) {
+      this.props.getUserData();
+    }
+  };
+
   render() {
     return (
       <div>
@@ -65,49 +105,16 @@ class CreateEvent extends Component {
                     onChange={event => this.handleChange(event, "endDate")}
                   />
                 </Form.Field>
-                {/* <Button type="submit" onClick={this.handleSubmit}>
-									Submit
-								</Button> */}
-							</Form>
-						</Modal.Description>
-					</Modal.Content>
-					<Modal.Actions>
-						<CreateInvitationModal handleSubmit={this.handleSubmit}/>
-					</Modal.Actions>
-				</Modal>
-			</div>
-		);
-	}
-	handleOpen = () => this.setState({ modalOpen: true });
-	handleClose = () => this.setState({ modalOpen: false });
-	handleChange = (event, propertyName) => {
-		const formFields = this.state.formFields;
-		formFields[propertyName] = event.target.value;
-		this.setState({
-			formFields: formFields
-		});
-	};
-	handleSubmit = (event,invitees) => {
-		event.preventDefault();
-		this.setState({
-			modalOpen: false
-		});
-
-		fetch(`${API_URL}/events/create`, {
-			method: 'POST',
-			credentials: 'include',
-			headers: {
-				Accept: 'application/json',
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({
-				title: this.state.formFields.title,
-				startDate: this.state.formFields.startDate,
-				endDate: this.state.formFields.endDate,
-				attendees: invitees 
-			})
-		});
-	};
+              </Form>
+            </Modal.Description>
+          </Modal.Content>
+          <Modal.Actions>
+            <CreateInvitationModal handleSubmit={this.handleSubmit} />
+          </Modal.Actions>
+        </Modal>
+      </div>
+    );
+  }
 }
 
 export default CreateEvent;
