@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Form, Modal, Card, Icon } from "semantic-ui-react";
+import { Form, Modal, Button, Icon } from "semantic-ui-react";
 import { API_URL } from "../utils/configVar";
 import CreateInvitationModal from "./CreateInvitationModal";
 
@@ -20,16 +20,15 @@ class CreateEvent extends Component {
       <div>
         <Modal
           trigger={
-            <div className="esnap-create-event">
-              <Card onClick={this.handleOpen}>
-                <div className="esnap-icon">
-                  <Icon name="add to calendar" size="huge" />
-                </div>
-                <Card.Content>
-                  <Card.Header>Create New Event</Card.Header>
-                </Card.Content>
-              </Card>
-            </div>
+            <Button animated="vertical" color="olive" onClick={this.handleOpen}>
+              <Button.Content hidden>Host Your Event</Button.Content>
+              <Button.Content visible>
+                <Icon.Group onClick={this.handleOpen} size="large">
+                  <Icon loading size="big" name="circle notch" />
+                  <Icon name="calendar alternate" />
+                </Icon.Group>
+              </Button.Content>
+            </Button>
           }
           open={this.state.modalOpen}
           onClose={this.handleClose}
