@@ -69,28 +69,9 @@ exports[`renders the create component of the app  1`] = `
               value=""
             />
           </FormField>
-          <FormField>
-            <label>
-              Start Date
-            </label>
-            <input
-              id="start"
-              onChange={[Function]}
-              placeholder="DD/MM/YYYY"
-              value=""
-            />
-          </FormField>
-          <FormField>
-            <label>
-              End Date
-            </label>
-            <input
-              id="end"
-              onChange={[Function]}
-              placeholder="DD/MM/YYYY"
-              value=""
-            />
-          </FormField>
+          <CreateEventCalender
+            handleCalendarDates={[Function]}
+          />
         </Form>
       </ModalDescription>
     </ModalContent>
