@@ -89,7 +89,7 @@ class CreateEvent extends Component {
             <Modal.Description>
               <Form>
                 <Form.Field>
-                  <label>Title</label>
+                  <label><h2>Title</h2></label>
                   <input
                     id="title"
                     placeholder="Title of the event"
