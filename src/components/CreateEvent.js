@@ -1,7 +1,9 @@
-import React, { Component } from 'react';
-import { Form, Modal, Button, Icon } from 'semantic-ui-react';
-import { API_URL } from '../utils/configVar';
-import CreateInvitationModal from './CreateInvitationModal';
+import React, { Component } from "react";
+import { Form, Modal, Button, Icon } from "semantic-ui-react";
+import { API_URL } from "../utils/configVar";
+import CreateInvitationModal from "./CreateInvitationModal";
+import CreateEventCalender from "./CreateEventCalender";
+import format from "date-fns/format";
 
 class CreateEvent extends Component {
   constructor() {
@@ -27,6 +29,15 @@ class CreateEvent extends Component {
       formFields: formFields
     });
   };
+
+  handleCalendarDates = (startDate,endDate) => {
+    const formFields = this.state.formFields;
+    formFields.startDate = format(startDate, 'DD/MM/YYYY');
+    formFields.endDate = format(endDate, 'DD/MM/YYYY');
+    this.setState({
+      formFields: formFields
+    })
+  }
 
   handleSubmit = async (event, invitees) => {
     event.preventDefault();
@@ -86,7 +97,9 @@ class CreateEvent extends Component {
                     onChange={event => this.handleChange(event, "title")}
                   />
                 </Form.Field>
-                <Form.Field>
+
+                <CreateEventCalender handleCalendarDates={this.handleCalendarDates} />
+                {/* <Form.Field>
                   <label>Start Date</label>
                   <input
                     id="start"
@@ -103,7 +116,7 @@ class CreateEvent extends Component {
                     value={this.state.formFields.endDate}
                     onChange={event => this.handleChange(event, "endDate")}
                   />
-                </Form.Field>
+                </Form.Field> */}
               </Form>
             </Modal.Description>
           </Modal.Content>
