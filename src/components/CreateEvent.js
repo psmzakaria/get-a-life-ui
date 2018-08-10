@@ -99,24 +99,6 @@ class CreateEvent extends Component {
                 </Form.Field>
 
                 <CreateEventCalender handleCalendarDates={this.handleCalendarDates} />
-                {/* <Form.Field>
-                  <label>Start Date</label>
-                  <input
-                    id="start"
-                    placeholder="DD/MM/YYYY"
-                    value={this.state.formFields.startDate}
-                    onChange={event => this.handleChange(event, "startDate")}
-                  />
-                </Form.Field>
-                <Form.Field>
-                  <label>End Date</label>
-                  <input
-                    id="end"
-                    placeholder="DD/MM/YYYY"
-                    value={this.state.formFields.endDate}
-                    onChange={event => this.handleChange(event, "endDate")}
-                  />
-                </Form.Field> */}
               </Form>
             </Modal.Description>
           </Modal.Content>
