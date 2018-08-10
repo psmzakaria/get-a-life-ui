@@ -27,7 +27,12 @@ const EOrganiser = props => {
       {props.invitedEvents.length > 0 && (
         <Card.Group>
           {props.invitedEvents.map((event, index) => {
-            return getESnap(event, props.statuses[index]);
+            return getESnap(
+              event,
+              props.statuses[index],
+              props.getUserData,
+              props.username
+            );
           })}
         </Card.Group>
       )}

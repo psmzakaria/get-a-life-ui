@@ -1,12 +1,32 @@
 import React, { Component } from "react";
 import { Card, Modal, Button, Checkbox, Icon } from "semantic-ui-react";
+import { API_URL } from "../utils/configVar";
 
 class ESnap extends Component {
+  handleAcceptSubmit = async event => {
+    event.preventDefault();
+    const eventId = this.props.event._id;
+    const response = await fetch(`${API_URL}/events/${eventId}/rsvp`, {
+      method: "PUT",
+      credentials: "include",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        status: "accepted",
+        availableDates: "XXXXXX"
+      })
+    });
+    if (response.ok) {
+      console.log("updated successfully");
+    }
+  };
+
   render() {
     const { title, hostId, proposedDates, description } = this.props.event;
     const { username: hostName } = hostId;
     const { status } = this.props;
-
     return (
       <div className="esnap-container-size">
         <Modal
@@ -17,7 +37,10 @@ class ESnap extends Component {
                 <Card.Meta>
                   <span>Host: {hostName}</span>
                 </Card.Meta>
-                <Card.Description> <Icon name='list' size='small' /> KIV - {description}</Card.Description>
+                <Card.Description>
+                  {" "}
+                  <Icon name="list" size="small" /> KIV - {description}
+                </Card.Description>
               </Card.Content>
               <Card.Content extra>{status}</Card.Content>
             </Card>
@@ -41,10 +64,14 @@ class ESnap extends Component {
                 );
               })}
               <br />
-              <Button floated="right" type="submit" onClick={this.handleSubmit}>
+              <Button
+                floated="right"
+                type="submit"
+                onClick={event => this.handleAcceptSubmit(event)}
+              >
                 Accept
               </Button>
-              <Button floated="right" type="submit" onClick={this.handleSubmit}>
+              <Button floated="right" type="submit">
                 Reject
               </Button>
             </Modal.Description>

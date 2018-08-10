@@ -59,7 +59,7 @@ exports[`renders the create component of the app  1`] = `
         <Button
           as="button"
           floated="right"
-          onClick={undefined}
+          onClick={[Function]}
           role="button"
           type="submit"
         >
@@ -68,7 +68,6 @@ exports[`renders the create component of the app  1`] = `
         <Button
           as="button"
           floated="right"
-          onClick={undefined}
           role="button"
           type="submit"
         >
