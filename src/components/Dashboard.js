@@ -63,6 +63,8 @@ class Dashboard extends Component {
         invitedEvents={this.state.invitedEvents}
         acceptedEvents={this.state.acceptedEvents}
         statuses={this.state.statuses}
+        getUserData={this.getUserData}
+        username={this.state.username}
       />
     );
   };
