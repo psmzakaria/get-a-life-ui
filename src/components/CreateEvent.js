@@ -9,8 +9,8 @@ class CreateEvent extends Component {
   constructor() {
     super();
     this.state = {
-      formFields: {
         title: "",
+      formFields: {
         startDate: "",
         endDate: ""
       },
@@ -22,11 +22,9 @@ class CreateEvent extends Component {
 
   handleClose = () => this.setState({ modalOpen: false });
 
-  handleChange = (event, propertyName) => {
-    const formFields = this.state.formFields;
-    formFields[propertyName] = event.target.value;
+  handleChange = event => {
     this.setState({
-      formFields: formFields
+      title: event.target.value
     });
   };
 
@@ -53,7 +51,7 @@ class CreateEvent extends Component {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        title: this.state.formFields.title,
+        title: this.state.title,
         startDate: this.state.formFields.startDate,
         endDate: this.state.formFields.endDate,
         attendees: invitees
@@ -93,8 +91,8 @@ class CreateEvent extends Component {
                   <input
                     id="title"
                     placeholder="Title of the event"
-                    value={this.state.formFields.title}
-                    onChange={event => this.handleChange(event, "title")}
+                    value={this.state.title}
+                    onChange={this.handleChange}
                   />
                 </Form.Field>
 
