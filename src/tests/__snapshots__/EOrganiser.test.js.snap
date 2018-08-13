@@ -23,7 +23,7 @@ exports[`renders the create component of the app  1`] = `
     disabled={true}
     textAlign="center"
   >
-    You have not been invited
+    You have been invited
   </Header>
   <Divider />
   <h2>

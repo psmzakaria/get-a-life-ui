@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import InfiniteCalendar, { Calendar, withRange } from "react-infinite-calendar";
-import "react-infinite-calendar/styles.css"; // only needs to be imported once
+import "react-infinite-calendar/styles.css"; 
 
 var today = new Date();
 var aYearFromToday = new Date(

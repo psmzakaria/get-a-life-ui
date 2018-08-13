@@ -9,11 +9,11 @@ class CreateEvent extends Component {
   constructor() {
     super();
     this.state = {
-        title: "",
-      formFields: {
-        startDate: "",
-        endDate: ""
-      },
+      title: "",
+
+      startDate: "",
+      endDate: "",
+
       modalOpen: false
     };
   }
@@ -28,14 +28,12 @@ class CreateEvent extends Component {
     });
   };
 
-  handleCalendarDates = (startDate,endDate) => {
-    const formFields = this.state.formFields;
-    formFields.startDate = format(startDate, 'DD/MM/YYYY');
-    formFields.endDate = format(endDate, 'DD/MM/YYYY');
+  handleCalendarDates = (startDate, endDate) => {
     this.setState({
-      formFields: formFields
-    })
-  }
+      endDate: format(endDate, "DD/MM/YYYY"),
+      startDate: format(startDate, "DD/MM/YYYY")
+    });
+  };
 
   handleSubmit = async (event, invitees) => {
     event.preventDefault();
@@ -52,8 +50,8 @@ class CreateEvent extends Component {
       },
       body: JSON.stringify({
         title: this.state.title,
-        startDate: this.state.formFields.startDate,
-        endDate: this.state.formFields.endDate,
+        startDate: this.state.startDate,
+        endDate: this.state.endDate,
         attendees: invitees
       })
     });
@@ -87,7 +85,9 @@ class CreateEvent extends Component {
             <Modal.Description>
               <Form>
                 <Form.Field>
-                  <label><h2>Title</h2></label>
+                  <label>
+                    <h2>Title</h2>
+                  </label>
                   <input
                     id="title"
                     placeholder="Title of the event"
@@ -96,7 +96,9 @@ class CreateEvent extends Component {
                   />
                 </Form.Field>
 
-                <CreateEventCalender handleCalendarDates={this.handleCalendarDates} />
+                <CreateEventCalender
+                  handleCalendarDates={this.handleCalendarDates}
+                />
               </Form>
             </Modal.Description>
           </Modal.Content>

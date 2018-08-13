@@ -38,7 +38,7 @@ const EOrganiser = props => {
       )}
       {props.invitedEvents.length === 0 && (
         <Header as="h2" textAlign="center" disabled>
-          You have not been invited
+          You have been invited
         </Header>
       )}
       <Divider />
