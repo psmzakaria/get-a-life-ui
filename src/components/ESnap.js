@@ -14,8 +14,21 @@ class ESnap extends Component {
     super();
     this.state = {
       dates: [],
-      dummy: []
+      dummy: [],
+      modalOpen: false
     };
+  }
+
+  handleOpen = () => {
+  this.setState({
+    modalOpen: true
+  })
+  }
+
+  handleClose = () => {
+    this.setState({
+      modalOpen: false
+    })
   }
 
   handleAcceptSubmit = async event => {
@@ -34,6 +47,7 @@ class ESnap extends Component {
       })
     });
     if (response.ok) {
+      this.handleClose()
       console.log("updated successfully");
     }
   };
@@ -74,7 +88,7 @@ class ESnap extends Component {
       <div className="esnap-container-size">
         <Modal
           trigger={
-            <Card color="violet">
+            <Card onClick={this.handleOpen} color="violet">
               <Card.Content>
                 <Card.Header>{title}</Card.Header>
                 <Card.Meta>
@@ -88,8 +102,8 @@ class ESnap extends Component {
               <Card.Content extra>{status}</Card.Content>
             </Card>
           }
-          open={this.props.modalOpen}
-          onClose={this.props.handleClose}
+          open={this.state.modalOpen}
+          onClose={this.handleClose}
           closeIcon
         >
           <Modal.Header>{title}</Modal.Header>

@@ -11,11 +11,12 @@ exports[`renders the create component of the app  1`] = `
     closeOnDocumentClick={false}
     dimmer={true}
     eventPool="Modal"
-    onClose={undefined}
-    open={undefined}
+    onClose={[Function]}
+    open={false}
     trigger={
       <Card
         color="violet"
+        onClick={[Function]}
       >
         <CardContent>
           <CardHeader>
