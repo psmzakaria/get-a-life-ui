@@ -13,36 +13,27 @@ exports[`renders the create component of the app  1`] = `
     open={false}
     trigger={
       <Button
-        animated="vertical"
+        animated={true}
         as="button"
         color="olive"
+        fluid={true}
         onClick={[Function]}
         role="button"
       >
         <ButtonContent
           hidden={true}
         >
-          Host Your Event
+          Create Your Event
         </ButtonContent>
         <ButtonContent
           visible={true}
         >
-          <IconGroup
+          <Icon
             as="i"
-            onClick={[Function]}
+            loading={true}
+            name="calendar alternate"
             size="large"
-          >
-            <Icon
-              as="i"
-              loading={true}
-              name="circle notch"
-              size="big"
-            />
-            <Icon
-              as="i"
-              name="calendar alternate"
-            />
-          </IconGroup>
+          />
         </ButtonContent>
       </Button>
     }

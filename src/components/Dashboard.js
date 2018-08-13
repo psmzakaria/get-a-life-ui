@@ -72,7 +72,7 @@ class Dashboard extends Component {
   render() {
     return (
       <div>
-        <Grid>
+        <Grid padded>
           <Grid.Column textAlign="center" width={4} color="violet">
             {this.renderProfileDiv()}
           </Grid.Column>

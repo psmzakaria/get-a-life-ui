@@ -66,13 +66,10 @@ class CreateEvent extends Component {
       <div>
         <Modal
           trigger={
-            <Button animated="vertical" color="olive" onClick={this.handleOpen}>
-              <Button.Content hidden>Host Your Event</Button.Content>
+            <Button fluid animated color="olive" onClick={this.handleOpen}>
+              <Button.Content hidden>Create Your Event</Button.Content>
               <Button.Content visible>
-                <Icon.Group onClick={this.handleOpen} size="large">
-                  <Icon loading size="big" name="circle notch" />
-                  <Icon name="calendar alternate" />
-                </Icon.Group>
+                <Icon loading size="large" name="calendar alternate" />
               </Button.Content>
             </Button>
           }
