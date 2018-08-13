@@ -10,7 +10,7 @@ it("renders the create component of the app ", () => {
     hostId: {
       username: "lala"
     },
-    proposedDates: []
+    proposedDates: ["20180813", "20180814", "20180815"]
   };
 
   renderer.render(<ESnap key={1} event={event} />);

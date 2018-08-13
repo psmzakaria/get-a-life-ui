@@ -55,6 +55,42 @@ exports[`renders the create component of the app  1`] = `
         </strong>
          
         <br />
+        <div>
+          <DefaultCalendar
+            Component={[Function]}
+            autoFocus={false}
+            displayOptions={
+              Object {
+                "showHeader": false,
+              }
+            }
+            height={318}
+            interpolateSelection={[Function]}
+            max={2018-08-14T16:00:00.000Z}
+            maxDate={2018-08-14T16:00:00.000Z}
+            min={2018-08-12T16:00:00.000Z}
+            minDate={2018-08-12T16:00:00.000Z}
+            onSelect={[Function]}
+            selected={Array []}
+            theme={
+              Object {
+                "floatingNav": Object {
+                  "background": "rgba(81, 67, 138, 0.96)",
+                  "chevron": "#FFA726",
+                  "color": "#FFF",
+                },
+                "headerColor": "rgb(127, 95, 251)",
+                "selectionColor": "rgb(146, 118, 255)",
+                "textColor": Object {
+                  "active": "#FFF",
+                  "default": "#333",
+                },
+                "weekdayColor": "rgb(146, 118, 255)",
+              }
+            }
+            width={614.4}
+          />
+        </div>
         <br />
         <Button
           as="button"
