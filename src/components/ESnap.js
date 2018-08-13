@@ -74,7 +74,7 @@ class ESnap extends Component {
       <div className="esnap-container-size">
         <Modal
           trigger={
-            <Card color="red">
+            <Card color="violet">
               <Card.Content>
                 <Card.Header>{title}</Card.Header>
                 <Card.Meta>

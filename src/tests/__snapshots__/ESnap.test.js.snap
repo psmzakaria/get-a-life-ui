@@ -15,7 +15,7 @@ exports[`renders the create component of the app  1`] = `
     open={undefined}
     trigger={
       <Card
-        color="red"
+        color="violet"
       >
         <CardContent>
           <CardHeader>

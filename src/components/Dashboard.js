@@ -76,7 +76,9 @@ class Dashboard extends Component {
           <Grid.Column textAlign="center" width={4} color="violet">
             {this.renderProfileDiv()}
           </Grid.Column>
-          <Grid.Column width={12}>{this.renderEOrganiseDiv()}</Grid.Column>
+          <Grid.Column color="teal" width={12}>
+            {this.renderEOrganiseDiv()}
+          </Grid.Column>
         </Grid>
       </div>
     );
