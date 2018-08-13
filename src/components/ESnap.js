@@ -71,9 +71,6 @@ class ESnap extends Component {
               >
                 Accept
               </Button>
-              <Button floated="right" type="submit">
-                Reject
-              </Button>
             </Modal.Description>
           </Modal.Content>
         </Modal>

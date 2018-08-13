@@ -18,7 +18,7 @@ const InvitationList = props => {
                   -
                 </Button>
               </List.Content>
-              <List.Content>{invitee}</List.Content>
+              <List.Content>{invitee.username}</List.Content>
             </List.Item>
           ))}
         </List>
