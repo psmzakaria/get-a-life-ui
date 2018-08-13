@@ -56,16 +56,20 @@ class ESnap extends Component {
     const firstDate = proposedDates[0];
     const lastDate = proposedDates[proposedDates.length - 1];
     const minDate = new Date(
-      `${firstDate.substr(0, 4)}-
-      ${firstDate.substr(4, 2)}-
-      ${firstDate.substr(6, 2)}`
+      Date.UTC(
+        firstDate.substr(0, 4),
+        firstDate.substr(4, 2) - 1,
+        firstDate.substr(6, 2)
+      )
     );
     const maxDate = new Date(
-      `${lastDate.substr(0, 4)}-
-      ${lastDate.substr(4, 2)}-
-      ${lastDate.substr(6, 2)}`
+      Date.UTC(
+        lastDate.substr(0, 4),
+        lastDate.substr(4, 2) - 1,
+        lastDate.substr(6, 2)
+      )
     );
-    
+
     return (
       <div className="esnap-container-size">
         <Modal
