@@ -18,6 +18,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
+    "install:cypress": "cypress install",
     "test:cypress": "cypress open",
     "test:cypress-headless": "cypress run",
     "db:reset": "node clearTestDb.js"
