@@ -12,9 +12,10 @@ exports[`renders the home component of the app  1`] = `
     <GridColumn
       width={8}
     >
-      <Logo />
+      <SideInfo />
     </GridColumn>
     <GridColumn
+      className=""
       width={8}
     >
       <CrendentialsForm
@@ -49,7 +50,7 @@ exports[`renders the home component of the app  1`] = `
   >
     <GridRow>
       <GridColumn>
-        <Logo />
+        <SideInfo />
       </GridColumn>
     </GridRow>
     <GridRow>

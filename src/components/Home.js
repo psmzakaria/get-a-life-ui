@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Grid, Responsive } from "semantic-ui-react";
 import Logo from "./Logo";
+import SideInfo from "./SideInfo";
 import CredentialsForm from "./CredentialsForm";
 import { API_URL } from "../utils/configVar";
 
@@ -29,9 +30,9 @@ class Home extends Component {
       <div className="container">
         <Responsive as={Grid} minWidth={768}>
           <Grid.Column width={8}>
-            <Logo />
+            <SideInfo />
           </Grid.Column>
-          <Grid.Column width={8}>
+          <Grid.Column className = ""width={8}>
             <CredentialsForm
               loadComponent={this.loadComponent}
               handleOnChange={this.handleOnChange}
@@ -43,7 +44,7 @@ class Home extends Component {
         <Responsive as={Grid} {...Responsive.onlyMobile}>
           <Grid.Row>
             <Grid.Column>
-              <Logo />
+              <SideInfo />
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>

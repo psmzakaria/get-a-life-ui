@@ -41,16 +41,42 @@ body {
 }
 
 .container {
-  margin: 50px;
-  border: 2px solid black;
-  border-radius: 10px;
+  margin: 0;
+  padding: 160px;
+  background-image: url("adventure-balloon-clouds-68806\ \(1\).jpg");
+  background-size: cover;
+  /* border: 2px solid red;
+  border-radius: 10px; */
+  display: grid;
+}
+
+.sideInfo {
+  height: 75vh;
+  padding: 5px;
+  text-align: center;
+  /* display: grid;
+  grid-template-rows: 1fr 2fr; */
+}
+
+.sideinfofirst {
+  color: white;
+  padding-right: 70px;
+}
+
+.sideinfomiddle {
+  color: white;
+  padding-left: 60px;
+}
+
+.sideinfolast {
+  color: white;
+  padding-right: 40px;
 }
 
 @media only screen and (max-width: 767px) {
   .container {
     margin: 25px;
   }
-
   .profile-container {
     margin-left: auto;
     margin-right: auto;
