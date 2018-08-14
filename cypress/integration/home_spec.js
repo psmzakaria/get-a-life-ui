@@ -25,7 +25,7 @@ context('Homepage test', () => {
 		cy.get('#username-display').contains('user01');
 	});
 
-	it('should remain in homepage for duplicate user sign up w/ error message', () => {
+	it.skip('should remain in homepage for duplicate user sign up w/ error message', () => {
 		cy.get('#username').clear().type('user01');
 		cy.get('#password').type('password01');
 		cy.get('#signup').click();
@@ -33,7 +33,7 @@ context('Homepage test', () => {
 		cy.url().should('eq', URL);
 	});
 
-	it('should remain in homepage for blank username sign up w/ error message', () => {
+	it.skip('should remain in homepage for blank username sign up w/ error message', () => {
 		cy.get('#username').clear().type(' ');
 		cy.get('#password').type('password01');
 		cy.get('#signup').click();
