@@ -30,6 +30,7 @@ jobs:
     docker:
       - image: circleci/node:10
     steps:
+      - checkout
       - run:
           name: run cypress test
           command: npm run test:cypress-headless
@@ -58,7 +59,7 @@ workflows:
       - approval-for-prod-deployment:
           type: approval
           requires:
-           - deploy-to-staging
+           - run-e2e
       - deploy-to-prod:
           requires:
             - approval-for-prod-deployment
