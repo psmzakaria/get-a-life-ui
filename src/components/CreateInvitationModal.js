@@ -54,7 +54,7 @@ class CreateInvitationModal extends Component {
     this.setState({ isLoading: false, results: [], value: "" });
 
   handleResultSelect = (e, { result }) => {
-    const inviteeData = { username: result.title, userid: result.userid };
+		const inviteeData = { username: result.title, userId: result.userid, status: 'pending' };
 
     this.setState({
       value: result.title,

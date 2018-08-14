@@ -1,59 +1,67 @@
 /// <reference types="Cypress" />
 const URL = 'http://localhost:3001/';
 
-const signupUser01 = () => {
-	cy.get('#username').clear().type('user01');
+const signupUser = (username) => {
+	cy.visit(URL);
+	cy.get('#username').clear().type(username);
 	cy.get('#password').type('password01');
 	cy.get('#signup').click();
 };
 
+const signinUser = (username) => {
+	cy.visit(URL);
+	cy.get('a').contains('Sign In Here').click();
+	cy.get('#username').clear().type(username);
+	cy.get('#password').type('password01');
+	cy.get('#signin').click();
+};
+
 const createEvent = () => {
-	cy.get('.add.to.calendar.huge.icon').click();
+	cy.get('.calendar').click();
 	cy.get('#title').clear().type('My New Event').should('have.value', 'My New Event');
-	cy.get('#start').clear().type('10/08/2018').should('have.value', '10/08/2018');
-	cy.get('#end').clear().type('25/08/2018').should('have.value', '25/08/2018');
-	cy.get('.ui.button').click();
+	cy.get('.Cal__Day__today').click();
+	cy.get('.Cal__Day__today + li').click();
+	cy.get('.ui.button').contains('Invite Friends!').click();
 };
 
-const inviteUser01 = () => {
-	cy.get('.prompt').type('user01');
+const inviteUser = (username) => {
+	cy.get('.prompt').type(username);
 	cy.get('.content .title').click();
+	cy.get('.actions').find('.button').contains('All Done').click();
 };
 
-const removeUser01 = () => {
+const removeUser = () => {
 	cy.get('.item').find('.button').contains('-').click();
 };
 
 context('Eventpage test', () => {
 	beforeEach(() => {
 		cy.exec('npm run db:reset');
-		cy.visit(URL);
+		signupUser('userGuest');
+		signupUser('userHost');
 	});
 
-	it('simulate signup and then proceed to create an event then add friends', () => {
-		signupUser01();
-		cy.url().should('eq', URL + 'user01/events');
-		cy.get('.esnap-container-size');
-
+	it('create an event then add friends', () => {
 		createEvent();
+		inviteUser('userGuest');
 
-		inviteUser01();
-		cy.get('.item').find('.content').contains('user01');
-		cy.get('.actions').find('.button').contains('All Done').click();
-		cy.get('.ui.centered.cards').children().should(($div) => {
-			expect($div).to.have.length(1);
-		});
+		cy.get('.esnap-container-size');
 	});
 
-	it('simulate signup, create an event, add friend then remove', () => {
-		signupUser01();
-		cy.url().should('eq', URL + 'user01/events');
-		cy.get('.esnap-container-size');
-
+	it.only('as a guest, i should see the event which i am invited to', () => {
 		createEvent();
+		inviteUser('userGuest');
 
-		inviteUser01();
-		removeUser01();
+		signinUser('userGuest');
+
+		cy.get('h2').contains('Your Invited Events').next().get('.esnap-container-size').should('have.length', 1);
+	});
+
+	it('create an event, add friend then remove', () => {
+		createEvent();
+		inviteUser('userGuest');
+
+		removeUser();
 		cy.get('.list').should('be.empty');
 	});
 });
