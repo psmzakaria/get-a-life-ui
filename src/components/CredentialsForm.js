@@ -2,6 +2,7 @@ import React from "react";
 import { Form, Message } from "semantic-ui-react";
 import SignUpButton from "./SignUpButton";
 import SignInButton from "./SignInButton";
+import logopicture from "./../getALifeLogo_v02s.png";
 
 const CrendentialsForm = props => {
   const isSignUp = props.state.componentToDisplay === "Sign Up";
@@ -16,7 +17,9 @@ const CrendentialsForm = props => {
     : props.state.signInError.content;
 
   return (
-    <div className="ui inverted segment form">
+    <div className="uisegmentform">
+      <img alt=" " className="logosize" src={logopicture} />
+
       <h1>{props.state.componentToDisplay}</h1>
       <Form>
         <Message

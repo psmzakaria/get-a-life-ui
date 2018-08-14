@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Grid, Responsive } from "semantic-ui-react";
-import Logo from "./Logo";
 import SideInfo from "./SideInfo";
 import CredentialsForm from "./CredentialsForm";
 import { API_URL } from "../utils/configVar";
