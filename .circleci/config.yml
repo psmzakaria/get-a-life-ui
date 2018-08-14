@@ -18,22 +18,37 @@ jobs:
       - run: # run tests
           name: Run Test
           command: npm test
-  deploy:
+  deploy-to-staging:
     docker:
       - image: buildpack-deps:trusty
     steps:
       - checkout
       - run:
           name: Deploy Master to Heroku
-          command: git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
+          command: git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_STAGING.git master
+  deploy-to-prod:
+    docker:
+      - image: buildpack-deps:trusty
+    steps:
+      - checkout
+      - run:
+          name: Deploy Master to Heroku
+          command: git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_PROD.git master
           
           
 
 workflows:
   version: 2
-  build-and-deploy:
+  cd-pipeline:
     jobs:
       - test
-      - deploy:
+      - deploy-to-staging:
           requires:
             - test
+      - hold:
+          type: approval
+          requires:
+           - deploy-to-staging
+      - deploy-to-prod:
+          requires:
+            - deploy-to-staging
