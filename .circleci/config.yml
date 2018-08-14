@@ -45,10 +45,10 @@ workflows:
       - deploy-to-staging:
           requires:
             - test
-      - hold:
+      - approval-for-prod-deployment:
           type: approval
           requires:
            - deploy-to-staging
       - deploy-to-prod:
           requires:
-            - deploy-to-staging
+            - approval-for-prod-deployment
