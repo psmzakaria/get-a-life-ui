@@ -13,7 +13,7 @@ jobs:
           command: npm install
       - run:
           name: install cypress
-          command: cypress install
+          command: npm run install:cypress
       - save_cache: # special step to save the dependency cache
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
