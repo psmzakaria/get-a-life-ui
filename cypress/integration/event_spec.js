@@ -57,14 +57,14 @@ context("Eventpage test", () => {
     signupUser(userHost);
   });
 
-  it("create an event then add friends", () => {
+  it.only("create an event then add friends", () => {
     createEvent();
     inviteUser(userGuest);
 
     cy.get(".esnap-container-size");
   });
 
-  it.only("as a guest, i should see the event which i am invited to", () => {
+  it("as a guest, i should see the event which i am invited to", () => {
     createEvent();
     inviteUser(userGuest);
 
