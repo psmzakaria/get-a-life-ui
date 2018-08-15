@@ -18,7 +18,7 @@ const CrendentialsForm = props => {
 
   return (
     <div className="uisegmentform">
-      <img alt=" " className="logosize" src={logopicture} />
+      {/* <img alt=" " className="logosize" src={logopicture} /> */}
 
       <h1>{props.state.componentToDisplay}</h1>
       <Form>
@@ -49,10 +49,11 @@ const CrendentialsForm = props => {
         </Form.Field>
         {props.state.componentToDisplay === "Sign Up" && (
           <SignUpButton
-            handleOnSubmit={props.handleOnSubmit}
-            loadComponent={props.loadComponent}
+          handleOnSubmit={props.handleOnSubmit}
+          loadComponent={props.loadComponent}
           />
         )}
+        
         {props.state.componentToDisplay === "Sign In" && (
           <SignInButton
             handleOnSubmit={props.handleOnSubmit}
@@ -60,6 +61,7 @@ const CrendentialsForm = props => {
           />
         )}
       </Form>
+      
     </div>
   );
 };

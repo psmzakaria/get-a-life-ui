@@ -49,10 +49,11 @@ class Dashboard extends Component {
       <div className="profile-container">
         <h2>Profile</h2>
 
-        <Icon size="huge" inverted color="teal" circular name="user" />
+        <Icon size="huge" inverted color="teal" circular name="smile" />
         <h3 id="username-display">{this.state.username}</h3>
         <CreateEvent getUserData={this.getUserData} />
       </div>
+    
     );
   };
 
@@ -71,15 +72,15 @@ class Dashboard extends Component {
 
   render() {
     return (
-      <div>
-        <Grid padded>
-          <Grid.Column textAlign="center" width={4} color="violet">
-            {this.renderProfileDiv()}
-          </Grid.Column>
-          <Grid.Column color="teal" width={12}>
-            {this.renderEOrganiseDiv()}
-          </Grid.Column>
-        </Grid>
+      <div className="dashContainer">
+      <Grid padded>
+        <Grid.Column   className="sidebar"textAlign="center" width={4}>
+          {this.renderProfileDiv()}
+        </Grid.Column>
+        <Grid.Column cl width={12}>
+          {this.renderEOrganiseDiv()}
+        </Grid.Column>
+      </Grid>
       </div>
     );
   }

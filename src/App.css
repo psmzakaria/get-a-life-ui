@@ -14,6 +14,7 @@ body {
 
 .eorganiser-container {
   padding: 20px;
+  
 }
 
 .esnap-container-size {
@@ -21,6 +22,7 @@ body {
   height: 100%;
   margin: 16px;
   cursor: pointer;
+  
 }
 
 .esnap-create-event {
@@ -38,6 +40,11 @@ body {
 
 .profile-container {
   height: 100vh;
+
+}
+.sidebar{
+  background: linear-gradient(rgb(41, 41, 187, 0.7),rgba(7, 1, 41, 0.8));
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
 }
 
 .container {
@@ -45,37 +52,55 @@ body {
   padding: 160px;
   background-image: url("adventure-balloon-clouds-68806\ \(1\).jpg");
   background-size: cover;
-  /* border: 2px solid red;
-  border-radius: 10px; */
   display: grid;
+}
+
+.dashContainer {
+  background-image: url("./components/images/cloudiness-clouds-cloudy-417045.jpg");
+  background-size: cover;
 }
 
 .sideInfo {
   height: 75vh;
   padding: 5px;
   text-align: center;
-  /* display: grid;
-  grid-template-rows: 1fr 2fr; */
 }
 
 .sideinfofirst {
   color: white;
-  padding-right: 70px;
+  padding-right: 60px;
+  padding-bottom: 5px;
+  display: flex;
+  align-items: center;
 }
 
 .sideinfomiddle {
   color: white;
-  padding-left: 60px;
+  padding-right: 60px;
+  padding-bottom:5px;
+  display: flex;
+  align-items: center;
 }
 
 .sideinfolast {
   color: white;
-  padding-right: 40px;
+  padding-right: 60px;
+  display: flex;
+  align-items: center;
 }
 
-.logosize {
-  width: 70px;
+.uisegmentform {
+  background-color: rgba(181, 207, 255, 0.705);
+  padding: 20px;
+  border-radius: 12px;
 }
+
+.icon{
+  width: 50px;
+  padding-right: 20px;
+}
+
+
 
 @media only screen and (max-width: 767px) {
   .container {
@@ -88,9 +113,7 @@ body {
   }
 }
 
- {
-  /* background-color: rgba(69, 42, 165, 0.384); */
-}
+
 
 /* .App {
   text-align: center;

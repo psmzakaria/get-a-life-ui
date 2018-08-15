@@ -16,7 +16,7 @@ const EOrganiser = props => {
     <div className="eorganiser-container">
       <h2> Your Hosted Events</h2>
       {props.hostedEvents.length > 0 && (
-        <Card.Group>
+        <Card.Group >
           {props.hostedEvents.map((event, index) => {
             return getHostModal(event, props.statuses[index]);
           })}

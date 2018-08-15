@@ -2,12 +2,6 @@
 
 exports[`should render the sign up button  1`] = `
 <div>
-  <FormField>
-    <Checkbox
-      label="I agree to the Terms and Conditions"
-      type="checkbox"
-    />
-  </FormField>
   <Button
     as="button"
     color="blue"

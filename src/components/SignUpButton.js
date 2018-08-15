@@ -1,12 +1,9 @@
 import React from "react";
-import { Form, Checkbox, Button, Divider } from "semantic-ui-react";
+import { Button, Divider } from "semantic-ui-react";
 
 const SignUpButton = props => {
   return (
     <div>
-      <Form.Field>
-        <Checkbox label="I agree to the Terms and Conditions" />
-      </Form.Field>
       <Button
         fluid
         id="signup"
