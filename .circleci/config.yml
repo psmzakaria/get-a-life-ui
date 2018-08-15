@@ -18,6 +18,7 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - ./node_modules
+            - /home/circleci/.cache/Cypress
       - run: # run tests
           name: Run Test
           command: npm test
