@@ -41,11 +41,8 @@ jobs:
       - restore_cache: # special step to restore the dependency cache
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
-          name: add cypress binary to PATH variable
-          command: export PATH=/home/circleci/.cache:$PATH
-      - run:
           name: run cypress test
-          command: npm run test:cypress-headless-ci
+          command: $(npm bin)/cypress run --env CI=$CI
   deploy-to-prod:
     docker:
       - image: buildpack-deps:trusty
