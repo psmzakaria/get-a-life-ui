@@ -1,9 +1,14 @@
 import React from "react";
 import { Card, Divider, Header } from "semantic-ui-react";
 import GuestModal from "./GuestModal";
+import HostModal from "./HostModal";
 
-const getESnap = (event, status) => {
+const getGuestModal = (event, status) => {
   return <GuestModal key={event._id} event={event} status={status} />;
+};
+
+const getHostModal = (event, status) => {
+  return <HostModal key={event._id} event={event} status={status} />;
 };
 
 const EOrganiser = props => {
@@ -13,7 +18,7 @@ const EOrganiser = props => {
       {props.hostedEvents.length > 0 && (
         <Card.Group>
           {props.hostedEvents.map((event, index) => {
-            return getESnap(event, props.statuses[index]);
+            return getHostModal(event, props.statuses[index]);
           })}
         </Card.Group>
       )}
@@ -27,7 +32,7 @@ const EOrganiser = props => {
       {props.invitedEvents.length > 0 && (
         <Card.Group>
           {props.invitedEvents.map((event, index) => {
-            return getESnap(
+            return getGuestModal(
               event,
               props.statuses[index],
               props.getUserData,
@@ -46,7 +51,7 @@ const EOrganiser = props => {
       {props.acceptedEvents.length > 0 && (
         <Card.Group>
           {props.acceptedEvents.map((event, index) => {
-            return getESnap(event, props.statuses[index]);
+            return getGuestModal(event, props.statuses[index]);
           })}
         </Card.Group>
       )}

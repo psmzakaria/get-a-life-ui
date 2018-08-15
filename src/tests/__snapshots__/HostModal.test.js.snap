@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the create component of the app  1`] = `
+<div
+  className="esnap-container-size"
+>
+  <Modal
+    centered={true}
+    closeIcon={true}
+    closeOnDimmerClick={true}
+    closeOnDocumentClick={false}
+    dimmer={true}
+    eventPool="Modal"
+    onClose={[Function]}
+    open={false}
+    trigger={
+      <EventCard
+        event={
+          Object {
+            "hostId": Object {
+              "username": "lala",
+            },
+            "proposedDates": Array [
+              "20180813",
+              "20180814",
+              "20180815",
+            ],
+            "title": "birthday",
+          }
+        }
+        handleOpen={[Function]}
+        status={undefined}
+      />
+    }
+  >
+    <ModalHeader>
+      <h2>
+        birthday
+      </h2>
+    </ModalHeader>
+    <ModalContent>
+      <ModalDescription>
+        <h3>
+           Pending Reply:
+        </h3>
+        <div>
+          <p>
+            No pending replies
+          </p>
+        </div>
+        <br />
+        <h3>
+           Pick a date:
+        </h3>
+        <Segment>
+          <Form
+            as="form"
+          >
+            <FormField>
+              Selected date: 
+              <b />
+            </FormField>
+          </Form>
+        </Segment>
+        <br />
+        <br />
+        <Button
+          as="button"
+          floated="right"
+          onClick={[Function]}
+          role="button"
+          type="submit"
+        >
+          Accept
+        </Button>
+      </ModalDescription>
+    </ModalContent>
+  </Modal>
+</div>
+`;
