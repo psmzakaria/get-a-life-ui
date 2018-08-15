@@ -43,14 +43,14 @@ jobs:
       - run:
           name: Setup Dependencies
           command: npm install
+      - run:
+          name: run cypress test
+          command: $(npm bin)/cypress run --record --key $CYPRESS_DASHBOARD_KEY --env CI=$CI 
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - ~/.npm 
             - ~/.cache
-      - run:
-          name: run cypress test
-          command: $(npm bin)/cypress run --env CI=$CI
   deploy-to-prod:
     docker:
       - image: buildpack-deps:trusty
