@@ -9,7 +9,7 @@ import InfiniteCalendar, {
 import "react-infinite-calendar/styles.css";
 import format from "date-fns/format";
 
-class ESnap extends Component {
+class GuestModal extends Component {
   constructor() {
     super();
     this.state = {
@@ -165,4 +165,4 @@ class ESnap extends Component {
   }
 }
 
-export default ESnap;
+export default GuestModal;

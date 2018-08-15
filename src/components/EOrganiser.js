@@ -1,9 +1,9 @@
 import React from "react";
 import { Card, Divider, Header } from "semantic-ui-react";
-import ESnap from "./ESnap";
+import GuestModal from "./GuestModal";
 
 const getESnap = (event, status) => {
-  return <ESnap key={event._id} event={event} status={status} />;
+  return <GuestModal key={event._id} event={event} status={status} />;
 };
 
 const EOrganiser = props => {
