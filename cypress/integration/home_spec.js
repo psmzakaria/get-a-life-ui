@@ -7,12 +7,12 @@ context("Homepage test", () => {
     cy.visit(URL);
   });
 
-  it("should return successful signup of user01", () => {
+  it.only("should return successful signup of user01", () => {
     cy.get("#username")
       .clear()
       .type(user01);
     cy.get("#password").type("password01");
-    cy.get("#signup").click();
+    cy.get("#signup[type='submit']").click();
     cy.url().should("eq", URL + `${user01}/events`);
   });
 
@@ -20,7 +20,7 @@ context("Homepage test", () => {
     cy.get(".cursor-pointer").click();
     cy.get("#username").type(user01);
     cy.get("#password").type("password01");
-    cy.get("#signin").click();
+    cy.get("#signin[type='submit']").click();
     cy.url().should("eq", URL + `${user01}/events`);
     cy.get("#username-display").contains(user01);
   });
