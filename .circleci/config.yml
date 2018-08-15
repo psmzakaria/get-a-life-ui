@@ -39,7 +39,7 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: run cypress test
-          command: npm run test:cypress-headless
+          command: npm run test:cypress-headless-ci
   deploy-to-prod:
     docker:
       - image: buildpack-deps:trusty

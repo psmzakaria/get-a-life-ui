@@ -21,7 +21,7 @@
     "install:cypress": "cypress install",
     "test:cypress": "cypress open",
     "test:cypress-headless": "cypress run",
-    "db:reset": "node clearTestDb.js"
+    "test:cypress-headless-ci": "cypress run --env CI=$CI"
   },
   "devDependencies": {
     "cypress": "^3.0.3",
