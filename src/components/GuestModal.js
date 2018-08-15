@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, Modal, Button, Icon } from "semantic-ui-react";
+import { Modal, Button } from "semantic-ui-react";
 import { API_URL } from "../utils/configVar";
 import InfiniteCalendar, {
   Calendar,
@@ -8,6 +8,7 @@ import InfiniteCalendar, {
 } from "react-infinite-calendar";
 import "react-infinite-calendar/styles.css";
 import format from "date-fns/format";
+import EventCard from "./EventCard";
 
 class GuestModal extends Component {
   constructor() {
@@ -20,16 +21,16 @@ class GuestModal extends Component {
   }
 
   handleOpen = () => {
-  this.setState({
-    modalOpen: true
-  })
-  }
+    this.setState({
+      modalOpen: true
+    });
+  };
 
   handleClose = () => {
     this.setState({
       modalOpen: false
-    })
-  }
+    });
+  };
 
   handleAcceptSubmit = async event => {
     event.preventDefault();
@@ -47,7 +48,7 @@ class GuestModal extends Component {
       })
     });
     if (response.ok) {
-      this.handleClose()
+      this.handleClose();
       console.log("updated successfully");
     }
   };
@@ -66,7 +67,6 @@ class GuestModal extends Component {
   render() {
     const { title, hostId, proposedDates, description } = this.props.event;
     const { username: hostName } = hostId;
-    const { status } = this.props;
     const firstDate = proposedDates[0];
     const lastDate = proposedDates[proposedDates.length - 1];
     const minDate = new Date(
@@ -88,19 +88,11 @@ class GuestModal extends Component {
       <div className="esnap-container-size">
         <Modal
           trigger={
-            <Card onClick={this.handleOpen} color="violet">
-              <Card.Content>
-                <Card.Header>{title}</Card.Header>
-                <Card.Meta>
-                  <span>Host: {hostName}</span>
-                </Card.Meta>
-                <Card.Description>
-                  {" "}
-                  <Icon name="list" size="small" /> KIV - {description}
-                </Card.Description>
-              </Card.Content>
-              <Card.Content extra>{status}</Card.Content>
-            </Card>
+            <EventCard
+              handleOpen={this.handleOpen}
+              event={this.props.event}
+              status={this.props.status}
+            />
           }
           open={this.state.modalOpen}
           onClose={this.handleClose}

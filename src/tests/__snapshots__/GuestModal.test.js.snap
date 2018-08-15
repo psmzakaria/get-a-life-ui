@@ -14,34 +14,23 @@ exports[`renders the create component of the app  1`] = `
     onClose={[Function]}
     open={false}
     trigger={
-      <Card
-        color="violet"
-        onClick={[Function]}
-      >
-        <CardContent>
-          <CardHeader>
-            birthday
-          </CardHeader>
-          <CardMeta>
-            <span>
-              Host: 
-              lala
-            </span>
-          </CardMeta>
-          <CardDescription>
-             
-            <Icon
-              as="i"
-              name="list"
-              size="small"
-            />
-             KIV - 
-          </CardDescription>
-        </CardContent>
-        <CardContent
-          extra={true}
-        />
-      </Card>
+      <EventCard
+        event={
+          Object {
+            "hostId": Object {
+              "username": "lala",
+            },
+            "proposedDates": Array [
+              "20180813",
+              "20180814",
+              "20180815",
+            ],
+            "title": "birthday",
+          }
+        }
+        handleOpen={[Function]}
+        status={undefined}
+      />
     }
   >
     <ModalHeader>
