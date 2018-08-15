@@ -38,11 +38,11 @@ jobs:
           TERM: xterm
     steps:
       - checkout
+      - restore_cache: # special step to restore the dependency cache
+          key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: check if cypress exists
           command: ls -la /home/circleci/.cache
-      - restore_cache: # special step to restore the dependency cache
-          key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: run cypress test
           command: npm run test:cypress-headless-ci
