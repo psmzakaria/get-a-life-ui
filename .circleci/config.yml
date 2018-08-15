@@ -11,7 +11,7 @@ jobs:
       - run:
           name: Setup Dependencies
           command: npm install
-      - run:
+      - run: # TODO: remove this and see it works
           name: install cypress
           command: npm run install:cypress
       - save_cache: # special step to save the dependency cache
@@ -38,8 +38,16 @@ jobs:
           TERM: xterm
     steps:
       - checkout
-      - restore_cache: # special step to restore the dependency cache
+      - restore_cache: 
           key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: Setup Dependencies
+          command: npm install
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ~/.npm 
+            - ~/.cache
       - run:
           name: run cypress test
           command: $(npm bin)/cypress run --env CI=$CI
@@ -58,10 +66,10 @@ workflows:
   version: 2
   cd-pipeline:
     jobs:
-      - test
-      - deploy-to-staging:
-          requires:
-            - test
+      # - test
+      # - deploy-to-staging:
+      #     requires:
+      #       - test
       - run-e2e:
           requires:
             - deploy-to-staging
