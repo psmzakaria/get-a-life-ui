@@ -70,9 +70,10 @@ workflows:
       # - deploy-to-staging:
       #     requires:
       #       - test
-      - run-e2e:
-          requires:
-            - deploy-to-staging
+      - run-e2e
+      # - run-e2e:
+          # requires:
+          #   - deploy-to-staging
       - approval-for-prod-deployment:
           type: approval
           requires:
