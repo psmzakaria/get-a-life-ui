@@ -49,6 +49,7 @@ jobs:
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
+            - ./node_modules
             - ~/.npm 
             - ~/.cache
   deploy-to-prod:
