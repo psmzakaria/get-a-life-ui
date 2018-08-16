@@ -143,15 +143,15 @@ class GuestModal extends Component {
                 />
               </div>
               <br />
-              <Button
-                floated="right"
-                type="submit"
-                onClick={event => this.handleAcceptSubmit(event)}
-              >
-                Accept
-              </Button>
             </Modal.Description>
           </Modal.Content>
+          <Modal.Actions>
+            <Button
+              type="submit"
+              content="Accept"
+              onClick={event => this.handleAcceptSubmit(event)}
+            />
+          </Modal.Actions>
         </Modal>
       </div>
     );

@@ -82,17 +82,17 @@ exports[`renders the create component of the app  1`] = `
           />
         </div>
         <br />
-        <Button
-          as="button"
-          floated="right"
-          onClick={[Function]}
-          role="button"
-          type="submit"
-        >
-          Accept
-        </Button>
       </ModalDescription>
     </ModalContent>
+    <ModalActions>
+      <Button
+        as="button"
+        content="Accept"
+        onClick={[Function]}
+        role="button"
+        type="submit"
+      />
+    </ModalActions>
   </Modal>
 </div>
 `;
