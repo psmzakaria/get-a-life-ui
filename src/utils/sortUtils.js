@@ -1,7 +1,11 @@
-const descSortObjPropLen = (object, key) => {
+const sortCountAndDate = (object, key) => {
   return object.sort((a, b) => {
-    return b[key].length - a[key].length;
+    if (a[key].length < b[key].length) return 1;
+    else if (a[key].length === b[key].length) {
+      return a.date > b.date ? 1 : -1;
+    }
+    return -1;
   });
 };
 
-module.exports = { descSortObjPropLen };
+module.exports = { sortCountAndDate };

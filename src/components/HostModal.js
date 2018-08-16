@@ -10,7 +10,7 @@ import {
 } from "semantic-ui-react";
 import { API_URL } from "../utils/configVar";
 import EventCard from "./EventCard";
-import { descSortObjPropLen } from "../utils/sortUtils";
+import { sortCountAndDate } from "../utils/sortUtils";
 
 class HostModal extends Component {
   constructor() {
@@ -39,8 +39,7 @@ class HostModal extends Component {
 
     if (response.ok) {
       const eventData = await response.json();
-
-      const sortedAttendance = descSortObjPropLen(
+      const sortedAttendance = sortCountAndDate(
         eventData.attending,
         "attendees"
       );
