@@ -4,7 +4,7 @@ import GuestModal from "./GuestModal";
 import HostModal from "./HostModal";
 import Logo from "./Logo";
 
-const getGuestModal = (event, status, getUserData) => {
+const getGuestModal = (event, getUserData, status) => {
   return (
     <GuestModal
       key={event._id}
@@ -15,8 +15,15 @@ const getGuestModal = (event, status, getUserData) => {
   );
 };
 
-const getHostModal = (event, status) => {
-  return <HostModal key={event._id} event={event} status={status} />;
+const getHostModal = (event, getUserData, status) => {
+  return (
+    <HostModal
+      key={event._id}
+      event={event}
+      status={status}
+      getUserData={getUserData}
+    />
+  );
 };
 
 const EOrganiser = props => {
@@ -30,7 +37,11 @@ const EOrganiser = props => {
         {props.hostedEvents.length > 0 && (
           <Card.Group>
             {props.hostedEvents.map((event, index) => {
-              return getHostModal(event, props.hostedStatuses[index]);
+              return getHostModal(
+                event,
+                props.getUserData,
+                props.hostedStatuses[index]
+              );
             })}
           </Card.Group>
         )}
