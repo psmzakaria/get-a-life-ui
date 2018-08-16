@@ -3,6 +3,7 @@ import { Grid, Responsive } from "semantic-ui-react";
 import SideInfo from "./SideInfo";
 import CredentialsForm from "./CredentialsForm";
 import { API_URL } from "../utils/configVar";
+import Logo from "./Logo";
 
 class Home extends Component {
   constructor() {
@@ -26,28 +27,17 @@ class Home extends Component {
 
   render() {
     return (
-      <div className="container">
-        <Responsive as={Grid} minWidth={768}>
-          <Grid.Column width={8}>
-            <SideInfo />
-          </Grid.Column>
-          <Grid.Column className = ""width={8}>
-            <CredentialsForm
-              loadComponent={this.loadComponent}
-              handleOnChange={this.handleOnChange}
-              handleOnSubmit={this.handleOnSubmit}
-              state={this.state}
-            />
-          </Grid.Column>
-        </Responsive>
-        <Responsive as={Grid} {...Responsive.onlyMobile}>
-          <Grid.Row>
-            <Grid.Column>
+      <div className="homeBgImage">
+        
+        <div className="logoPadding">
+          <Logo />
+        </div>
+        <div className="container">
+          <Responsive as={Grid} minWidth={768}>
+            <Grid.Column width={8}>
               <SideInfo />
             </Grid.Column>
-          </Grid.Row>
-          <Grid.Row>
-            <Grid.Column>
+            <Grid.Column className="" width={8}>
               <CredentialsForm
                 loadComponent={this.loadComponent}
                 handleOnChange={this.handleOnChange}
@@ -55,8 +45,25 @@ class Home extends Component {
                 state={this.state}
               />
             </Grid.Column>
-          </Grid.Row>
-        </Responsive>
+          </Responsive>
+          <Responsive as={Grid} {...Responsive.onlyMobile}>
+            <Grid.Row>
+              <Grid.Column>
+                <SideInfo />
+              </Grid.Column>
+            </Grid.Row>
+            <Grid.Row>
+              <Grid.Column>
+                <CredentialsForm
+                  loadComponent={this.loadComponent}
+                  handleOnChange={this.handleOnChange}
+                  handleOnSubmit={this.handleOnSubmit}
+                  state={this.state}
+                />
+              </Grid.Column>
+            </Grid.Row>
+          </Responsive>
+        </div>
       </div>
     );
   }

@@ -48,11 +48,16 @@ body {
 }
 
 .container {
-  margin: 0;
-  padding: 160px;
+  padding: 120px 160px;
+}
+
+.logoPadding {
+  padding: 34px 34px 0px 0px;
+}
+
+.homeBgImage {
   background-image: url("./components/images/adventure-balloon-clouds-68806.jpg");
-  background-size: cover;
-  display: grid;
+  background-size: cover; 
 }
 
 .dashContainer {

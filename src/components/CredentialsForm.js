@@ -2,8 +2,6 @@ import React from "react";
 import { Form, Message } from "semantic-ui-react";
 import SignUpButton from "./SignUpButton";
 import SignInButton from "./SignInButton";
-import logopicture from "./../getALifeLogo_v02s.png";
-
 const CrendentialsForm = props => {
   const isSignUp = props.state.componentToDisplay === "Sign Up";
   const isMessageHidden = isSignUp
@@ -18,8 +16,6 @@ const CrendentialsForm = props => {
 
   return (
     <div className="uisegmentform">
-      {/* <img alt=" " className="logosize" src={logopicture} /> */}
-
       <h1>{props.state.componentToDisplay}</h1>
       <Form>
         <Message
@@ -49,11 +45,11 @@ const CrendentialsForm = props => {
         </Form.Field>
         {props.state.componentToDisplay === "Sign Up" && (
           <SignUpButton
-          handleOnSubmit={props.handleOnSubmit}
-          loadComponent={props.loadComponent}
+            handleOnSubmit={props.handleOnSubmit}
+            loadComponent={props.loadComponent}
           />
         )}
-        
+
         {props.state.componentToDisplay === "Sign In" && (
           <SignInButton
             handleOnSubmit={props.handleOnSubmit}
@@ -61,7 +57,6 @@ const CrendentialsForm = props => {
           />
         )}
       </Form>
-      
     </div>
   );
 };

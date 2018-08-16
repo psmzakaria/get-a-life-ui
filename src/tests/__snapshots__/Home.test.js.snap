@@ -2,59 +2,30 @@
 
 exports[`renders the home component of the app  1`] = `
 <div
-  className="container"
+  className="homeBgImage"
 >
-  <Responsive
-    as={[Function]}
-    getWidth={[Function]}
-    minWidth={768}
+  <div
+    className="logoPadding"
   >
-    <GridColumn
-      width={8}
-    >
-      <SideInfo />
-    </GridColumn>
-    <GridColumn
-      className=""
-      width={8}
-    >
-      <CrendentialsForm
-        handleOnChange={[Function]}
-        handleOnSubmit={[Function]}
-        loadComponent={[Function]}
-        state={
-          Object {
-            "componentToDisplay": "Sign Up",
-            "password": "",
-            "signInError": Object {
-              "content": "",
-              "header": "",
-              "hidden": true,
-            },
-            "signUpError": Object {
-              "content": "",
-              "header": "",
-              "hidden": true,
-            },
-            "username": "",
-          }
-        }
-      />
-    </GridColumn>
-  </Responsive>
-  <Responsive
-    as={[Function]}
-    getWidth={[Function]}
-    maxWidth={767}
-    minWidth={320}
+    <Logo />
+  </div>
+  <div
+    className="container"
   >
-    <GridRow>
-      <GridColumn>
+    <Responsive
+      as={[Function]}
+      getWidth={[Function]}
+      minWidth={768}
+    >
+      <GridColumn
+        width={8}
+      >
         <SideInfo />
       </GridColumn>
-    </GridRow>
-    <GridRow>
-      <GridColumn>
+      <GridColumn
+        className=""
+        width={8}
+      >
         <CrendentialsForm
           handleOnChange={[Function]}
           handleOnSubmit={[Function]}
@@ -78,7 +49,45 @@ exports[`renders the home component of the app  1`] = `
           }
         />
       </GridColumn>
-    </GridRow>
-  </Responsive>
+    </Responsive>
+    <Responsive
+      as={[Function]}
+      getWidth={[Function]}
+      maxWidth={767}
+      minWidth={320}
+    >
+      <GridRow>
+        <GridColumn>
+          <SideInfo />
+        </GridColumn>
+      </GridRow>
+      <GridRow>
+        <GridColumn>
+          <CrendentialsForm
+            handleOnChange={[Function]}
+            handleOnSubmit={[Function]}
+            loadComponent={[Function]}
+            state={
+              Object {
+                "componentToDisplay": "Sign Up",
+                "password": "",
+                "signInError": Object {
+                  "content": "",
+                  "header": "",
+                  "hidden": true,
+                },
+                "signUpError": Object {
+                  "content": "",
+                  "header": "",
+                  "hidden": true,
+                },
+                "username": "",
+              }
+            }
+          />
+        </GridColumn>
+      </GridRow>
+    </Responsive>
+  </div>
 </div>
 `;
