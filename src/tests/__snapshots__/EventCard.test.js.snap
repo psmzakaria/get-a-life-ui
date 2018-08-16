@@ -15,15 +15,6 @@ exports[`renders the create component of the app  1`] = `
         lala
       </span>
     </CardMeta>
-    <CardDescription>
-       
-      <Icon
-        as="i"
-        name="list"
-        size="small"
-      />
-       KIV - 
-    </CardDescription>
   </CardContent>
   <CardContent
     extra={true}

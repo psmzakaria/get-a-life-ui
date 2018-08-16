@@ -11,10 +11,6 @@ const EventCard = props => {
         <Card.Meta>
           <span>Host: {hostName}</span>
         </Card.Meta>
-        <Card.Description>
-          {" "}
-          <Icon name="list" size="small" /> KIV - {description}
-        </Card.Description>
       </Card.Content>
       <Card.Content extra>{props.status}</Card.Content>
     </Card>
