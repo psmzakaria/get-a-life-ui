@@ -74,7 +74,7 @@ class Dashboard extends Component {
     return (
       <div className="dashContainer">
       <Grid padded>
-        <Grid.Column   className="sidebar"textAlign="center" width={4}>
+        <Grid.Column className="sidebar" textAlign="center" width={4}>
           {this.renderProfileDiv()}
         </Grid.Column>
         <Grid.Column cl width={12}>
