@@ -2,21 +2,13 @@
 
 exports[`renders the home component of the app  1`] = `
 <div
-  className="homeBgImage"
+  className="home-div"
 >
-  <div
-    className="logoPadding"
-  >
-    <Logo />
-  </div>
+  <Logo />
   <div
     className="container"
   >
-    <Responsive
-      as={[Function]}
-      getWidth={[Function]}
-      minWidth={768}
-    >
+    <Grid>
       <GridColumn
         width={8}
       >
@@ -49,45 +41,7 @@ exports[`renders the home component of the app  1`] = `
           }
         />
       </GridColumn>
-    </Responsive>
-    <Responsive
-      as={[Function]}
-      getWidth={[Function]}
-      maxWidth={767}
-      minWidth={320}
-    >
-      <GridRow>
-        <GridColumn>
-          <SideInfo />
-        </GridColumn>
-      </GridRow>
-      <GridRow>
-        <GridColumn>
-          <CrendentialsForm
-            handleOnChange={[Function]}
-            handleOnSubmit={[Function]}
-            loadComponent={[Function]}
-            state={
-              Object {
-                "componentToDisplay": "Sign Up",
-                "password": "",
-                "signInError": Object {
-                  "content": "",
-                  "header": "",
-                  "hidden": true,
-                },
-                "signUpError": Object {
-                  "content": "",
-                  "header": "",
-                  "hidden": true,
-                },
-                "username": "",
-              }
-            }
-          />
-        </GridColumn>
-      </GridRow>
-    </Responsive>
+    </Grid>
   </div>
 </div>
 `;

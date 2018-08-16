@@ -76,17 +76,18 @@ class Dashboard extends Component {
   };
 
   render() {
+    var body = document.getElementsByTagName("body")[0];
+    body.style.backgroundImage = "url(/static/media/dashboardBg.e819e472.jpg)";
+
     return (
-      <div className="dashContainer">
-        <Grid padded>
-          <Grid.Column className="sidebar" textAlign="center" width={4}>
-            {this.renderProfileDiv()}
-          </Grid.Column>
-          <Grid.Column cl width={12}>
-            {this.renderEOrganiseDiv()}
-          </Grid.Column>
-        </Grid>
-      </div>
+      <Grid padded>
+        <Grid.Column className="sidebar" textAlign="center" width={4}>
+          {this.renderProfileDiv()}
+        </Grid.Column>
+        <Grid.Column cl width={12}>
+          {this.renderEOrganiseDiv()}
+        </Grid.Column>
+      </Grid>
     );
   }
 }

@@ -26,14 +26,15 @@ class Home extends Component {
   }
 
   render() {
+    var body = document.getElementsByTagName("body")[0];
+    body.style.backgroundImage =
+      "url(/static/media/adventure-balloon-clouds-68806.fb43e175.jpg)";
+
     return (
-      <div className="homeBgImage">
-        
-        <div className="logoPadding">
-          <Logo />
-        </div>
+      <div className="home-div">
+        <Logo />
         <div className="container">
-          <Responsive as={Grid} minWidth={768}>
+          <Grid>
             <Grid.Column width={8}>
               <SideInfo />
             </Grid.Column>
@@ -45,24 +46,7 @@ class Home extends Component {
                 state={this.state}
               />
             </Grid.Column>
-          </Responsive>
-          <Responsive as={Grid} {...Responsive.onlyMobile}>
-            <Grid.Row>
-              <Grid.Column>
-                <SideInfo />
-              </Grid.Column>
-            </Grid.Row>
-            <Grid.Row>
-              <Grid.Column>
-                <CredentialsForm
-                  loadComponent={this.loadComponent}
-                  handleOnChange={this.handleOnChange}
-                  handleOnSubmit={this.handleOnSubmit}
-                  state={this.state}
-                />
-              </Grid.Column>
-            </Grid.Row>
-          </Responsive>
+          </Grid>
         </div>
       </div>
     );

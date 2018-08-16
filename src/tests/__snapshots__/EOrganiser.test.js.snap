@@ -1,41 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the create component of the app  1`] = `
-<div
-  className="eorganiser-container"
->
-  <Logo />
-  <h2>
-     Your Hosted Events
-  </h2>
-  <Header
-    as="h2"
-    disabled={true}
-    textAlign="center"
+<div>
+  <div
+    className="float-right"
   >
-    You have no hosted events
-  </Header>
-  <Divider />
-  <h2>
-     Your Invited Events
-  </h2>
-  <Header
-    as="h2"
-    disabled={true}
-    textAlign="center"
+    <Logo />
+  </div>
+  <div
+    className="eorganiser-container"
   >
-    You have been invited
-  </Header>
-  <Divider />
-  <h2>
-     You have a life
-  </h2>
-  <Header
-    as="h2"
-    disabled={true}
-    textAlign="center"
-  >
-    Soon ...
-  </Header>
+    <h2>
+       Your Hosted Events
+    </h2>
+    <Header
+      as="h2"
+      disabled={true}
+      textAlign="center"
+    >
+      You have no hosted events
+    </Header>
+    <Divider />
+    <h2>
+       Your Invited Events
+    </h2>
+    <Header
+      as="h2"
+      disabled={true}
+      textAlign="center"
+    >
+      You have been invited
+    </Header>
+    <Divider />
+    <h2>
+       You have a life
+    </h2>
+    <Header
+      as="h2"
+      disabled={true}
+      textAlign="center"
+    >
+      Soon ...
+    </Header>
+  </div>
 </div>
 `;
