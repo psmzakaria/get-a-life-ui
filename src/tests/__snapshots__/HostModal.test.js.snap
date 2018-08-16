@@ -49,19 +49,23 @@ exports[`renders the create component of the app  1`] = `
           </p>
         </div>
         <br />
-        <h3>
-           Pick a date:
-        </h3>
-        <Segment>
-          <Form
-            as="form"
-          >
-            <FormField>
-              Selected date: 
-              <b />
-            </FormField>
-          </Form>
-        </Segment>
+        <div>
+          <h3>
+            Confirmed Date of Meeting:
+          </h3>
+          <h3 />
+          <h3>
+            Confirmed Attendees:
+          </h3>
+          <Label>
+            <Icon
+              as="i"
+              name="user"
+            />
+             
+            no attendee
+          </Label>
+        </div>
         <br />
         <br />
         <Button

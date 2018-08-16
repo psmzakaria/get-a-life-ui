@@ -88,6 +88,14 @@ class HostModal extends Component {
       console.log("updated successfully");
     }
   };
+
+  findConfirmedAttendees() {
+    const obj = this.state.attending.find(
+      attendance => attendance.date === this.props.status
+    );
+    return obj === undefined ? ["no attendee"] : obj["attendees"];
+  }
+
   render() {
     const { title } = this.props.event;
     const listOfDates = this.state.seeMore
@@ -128,53 +136,73 @@ class HostModal extends Component {
                 )}
               </div>
               <br />
-              <h3> Pick a date:</h3>
-              <Segment>
-                <Form>
-                  <Form.Field>
-                    Selected date: <b>{this.state.selectedDate}</b>
-                  </Form.Field>
-                  {listOfDates.map((attendance, index) => {
-                    return (
-                      <Form.Field key={index}>
-                        <Radio
-                          label={attendance.date}
-                          name="radioGroup"
-                          value={attendance.date}
-                          checked={this.state.selectedDate === attendance.date}
-                          onChange={this.handleChange}
-                        />
-                        {attendance.attendees.map((attendee, index) => {
-                          return (
-                            <Label key={index}>
-                              <Icon name="user" />
-                              {attendee}
-                            </Label>
-                          );
-                        })}
+              {this.props.status === "Pending for reply" ? (
+                <div>
+                  <h3> Pick a date:</h3>
+                  <Segment>
+                    <Form>
+                      <Form.Field>
+                        Selected date: <b>{this.state.selectedDate}</b>
                       </Form.Field>
+                      {listOfDates.map((attendance, index) => {
+                        return (
+                          <Form.Field key={index}>
+                            <Radio
+                              label={attendance.date}
+                              name="radioGroup"
+                              value={attendance.date}
+                              checked={
+                                this.state.selectedDate === attendance.date
+                              }
+                              onChange={this.handleChange}
+                            />
+                            {attendance.attendees.map((attendee, index) => {
+                              return (
+                                <Label key={index}>
+                                  <Icon name="user" />
+                                  {attendee}
+                                </Label>
+                              );
+                            })}
+                          </Form.Field>
+                        );
+                      })}
+                      {this.state.attending.length > 5 &&
+                        (this.state.seeMore ? (
+                          this.state.seeMore && (
+                            <a
+                              className="cursor-pointer"
+                              onClick={() => this.setState({ seeMore: false })}
+                            >
+                              {` `} See Less
+                            </a>
+                          )
+                        ) : (
+                          <a
+                            className="cursor-pointer"
+                            onClick={() => this.setState({ seeMore: true })}
+                          >
+                            {` `} See More
+                          </a>
+                        ))}
+                    </Form>
+                  </Segment>
+                </div>
+              ) : (
+                <div>
+                  <h3>Confirmed Date of Meeting:</h3>
+                  <h3>{this.props.status}</h3>
+                  <h3>Confirmed Attendees:</h3>
+                  {this.findConfirmedAttendees().map((user, index) => {
+                    return (
+                      <Label key={index}>
+                        <Icon name="user" /> {user}
+                      </Label>
                     );
                   })}
-                  {this.state.attending.length > 5 &&
-                    (this.state.seeMore ? (
-                      this.state.seeMore && (
-                        <a
-                          className="cursor-pointer"
-                          onClick={() => this.setState({ seeMore: false })}
-                        >
-                          {` `} See Less
-                        </a>
-                      )
-                    ) : (
-                      <a
-                        className="cursor-pointer"
-                        onClick={() => this.setState({ seeMore: true })}
-                      >
-                        {` `} See More
-                      </a>
-                    ))}
-                </Form>
-              </Segment>
+                </div>
+              )}
+
               <br />
               <br />
               <Button
