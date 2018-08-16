@@ -63,47 +63,45 @@ class CreateEvent extends Component {
 
   render() {
     return (
-      <div>
-        <Modal
-          trigger={
-            <Button fluid animated color="teal" onClick={this.handleOpen}>
-              <Button.Content hidden>Create Your Event</Button.Content>
-              <Button.Content visible>
-                <Icon loading size="large" name="calendar alternate" />
-              </Button.Content>
-            </Button>
-          }
-          open={this.state.modalOpen}
-          onClose={this.handleClose}
-          closeIcon
-        >
-          <Modal.Header>Create Your Event</Modal.Header>
-          <Modal.Content image scrolling>
-            <Modal.Description>
-              <Form>
-                <Form.Field>
-                  <label>
-                    <h2>Title</h2>
-                  </label>
-                  <input
-                    id="title"
-                    placeholder="Title of the event"
-                    value={this.state.title}
-                    onChange={this.handleChange}
-                  />
-                </Form.Field>
-
-                <CreateEventCalender
-                  handleCalendarDates={this.handleCalendarDates}
+      <Modal
+        trigger={
+          <Button fluid animated color="teal" onClick={this.handleOpen}>
+            <Button.Content hidden>Create Your Event</Button.Content>
+            <Button.Content visible>
+              <Icon loading size="large" name="calendar alternate" />
+            </Button.Content>
+          </Button>
+        }
+        open={this.state.modalOpen}
+        onClose={this.handleClose}
+        closeIcon
+      >
+        <Modal.Header>Create Your Event</Modal.Header>
+        <Modal.Content image scrolling>
+          <Modal.Description>
+            <Form>
+              <Form.Field>
+                <label>
+                  <h2>Title</h2>
+                </label>
+                <input
+                  id="title"
+                  placeholder="Title of the event"
+                  value={this.state.title}
+                  onChange={this.handleChange}
                 />
-              </Form>
-            </Modal.Description>
-          </Modal.Content>
-          <Modal.Actions>
-            <CreateInvitationModal handleSubmit={this.handleSubmit} />
-          </Modal.Actions>
-        </Modal>
-      </div>
+              </Form.Field>
+
+              <CreateEventCalender
+                handleCalendarDates={this.handleCalendarDates}
+              />
+            </Form>
+          </Modal.Description>
+        </Modal.Content>
+        <Modal.Actions>
+          <CreateInvitationModal handleSubmit={this.handleSubmit} />
+        </Modal.Actions>
+      </Modal>
     );
   }
 }

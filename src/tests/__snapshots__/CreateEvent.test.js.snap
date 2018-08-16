@@ -1,78 +1,76 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the create component of the app  1`] = `
-<div>
-  <Modal
-    centered={true}
-    closeIcon={true}
-    closeOnDimmerClick={true}
-    closeOnDocumentClick={false}
-    dimmer={true}
-    eventPool="Modal"
-    onClose={[Function]}
-    open={false}
-    trigger={
-      <Button
-        animated={true}
-        as="button"
-        color="teal"
-        fluid={true}
-        onClick={[Function]}
-        role="button"
-      >
-        <ButtonContent
-          hidden={true}
-        >
-          Create Your Event
-        </ButtonContent>
-        <ButtonContent
-          visible={true}
-        >
-          <Icon
-            as="i"
-            loading={true}
-            name="calendar alternate"
-            size="large"
-          />
-        </ButtonContent>
-      </Button>
-    }
-  >
-    <ModalHeader>
-      Create Your Event
-    </ModalHeader>
-    <ModalContent
-      image={true}
-      scrolling={true}
+<Modal
+  centered={true}
+  closeIcon={true}
+  closeOnDimmerClick={true}
+  closeOnDocumentClick={false}
+  dimmer={true}
+  eventPool="Modal"
+  onClose={[Function]}
+  open={false}
+  trigger={
+    <Button
+      animated={true}
+      as="button"
+      color="teal"
+      fluid={true}
+      onClick={[Function]}
+      role="button"
     >
-      <ModalDescription>
-        <Form
-          as="form"
-        >
-          <FormField>
-            <label>
-              <h2>
-                Title
-              </h2>
-            </label>
-            <input
-              id="title"
-              onChange={[Function]}
-              placeholder="Title of the event"
-              value=""
-            />
-          </FormField>
-          <CreateEventCalender
-            handleCalendarDates={[Function]}
+      <ButtonContent
+        hidden={true}
+      >
+        Create Your Event
+      </ButtonContent>
+      <ButtonContent
+        visible={true}
+      >
+        <Icon
+          as="i"
+          loading={true}
+          name="calendar alternate"
+          size="large"
+        />
+      </ButtonContent>
+    </Button>
+  }
+>
+  <ModalHeader>
+    Create Your Event
+  </ModalHeader>
+  <ModalContent
+    image={true}
+    scrolling={true}
+  >
+    <ModalDescription>
+      <Form
+        as="form"
+      >
+        <FormField>
+          <label>
+            <h2>
+              Title
+            </h2>
+          </label>
+          <input
+            id="title"
+            onChange={[Function]}
+            placeholder="Title of the event"
+            value=""
           />
-        </Form>
-      </ModalDescription>
-    </ModalContent>
-    <ModalActions>
-      <CreateInvitationModal
-        handleSubmit={[Function]}
-      />
-    </ModalActions>
-  </Modal>
-</div>
+        </FormField>
+        <CreateEventCalender
+          handleCalendarDates={[Function]}
+        />
+      </Form>
+    </ModalDescription>
+  </ModalContent>
+  <ModalActions>
+    <CreateInvitationModal
+      handleSubmit={[Function]}
+    />
+  </ModalActions>
+</Modal>
 `;
