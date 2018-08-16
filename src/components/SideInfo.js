@@ -6,17 +6,17 @@ import noExcuese from "../icons/noExcuese.png";
 const SideInfo = () => (
   <p className="sideInfo">
     <div className="sideinfofirst">
-      <img alt=" " className="icon" src={fun} />{" "}
+      <img alt=" " className="message-icon" src={fun} />{" "}
       <span>Enjoy Life to the Fullest</span>
     </div>
 
     <div className="sideinfomiddle">
-      <img alt=" " className="icon" src={connect} />{" "}
+      <img alt=" " className="message-icon" src={connect} />{" "}
       <span>Never miss out a day out with your friends!!!</span>
     </div>
 
     <div className="sideinfolast">
-      <img alt=" " className="icon" src={noExcuese} />{" "}
+      <img alt=" " className="message-icon" src={noExcuese} />{" "}
       <span>No excuses to not Get a Life </span>
     </div>
   </p>
