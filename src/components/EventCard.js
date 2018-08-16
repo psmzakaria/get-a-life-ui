@@ -1,8 +1,8 @@
 import React from "react";
-import { Card, Icon } from "semantic-ui-react";
+import { Card } from "semantic-ui-react";
 
 const EventCard = props => {
-  const { title, hostId, description } = props.event;
+  const { title, hostId } = props.event;
   const { username: hostName } = hostId;
   return (
     <Card onClick={props.handleOpen} color="violet">
