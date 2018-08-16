@@ -27,7 +27,7 @@ const EOrganiser = props => {
       {props.hostedEvents.length > 0 && (
         <Card.Group>
           {props.hostedEvents.map((event, index) => {
-            return getHostModal(event, props.statuses[index]);
+            return getHostModal(event, props.hostedStatuses[index]);
           })}
         </Card.Group>
       )}
@@ -44,7 +44,7 @@ const EOrganiser = props => {
             return getGuestModal(
               event,
               props.getUserData,
-              props.statuses[index],
+              props.invitedStatuses[index],
               props.username
             );
           })}
@@ -60,7 +60,7 @@ const EOrganiser = props => {
       {props.acceptedEvents.length > 0 && (
         <Card.Group>
           {props.acceptedEvents.map((event, index) => {
-            return getGuestModal(event, props.statuses[index]);
+            return getGuestModal(event, props.invitedStatuses[index]);
           })}
         </Card.Group>
       )}

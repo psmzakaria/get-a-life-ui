@@ -10,9 +10,11 @@ class Dashboard extends Component {
     this.state = {
       username: "",
       hostedEvents: [],
+      hostedStatuses: [],
       invitedEvents: [],
+      invitedStatuses: [],
       acceptedEvents: [],
-      statuses: []
+      acceptedStatuses: []
     };
   }
 
@@ -37,9 +39,11 @@ class Dashboard extends Component {
       this.setState({
         username: userData.username,
         hostedEvents: userData.hostedEvents,
+        hostedStatuses: userData.hostedStatuses,
         invitedEvents: userData.invitedEvents,
+        invitedStatuses: userData.invitedStatuses,
         acceptedEvents: userData.acceptedEvents,
-        statuses: userData.statuses
+        acceptedStatuses: userData.acceptedStatuses
       });
     }
   };
@@ -53,7 +57,6 @@ class Dashboard extends Component {
         <h3 id="username-display">{this.state.username}</h3>
         <CreateEvent getUserData={this.getUserData} />
       </div>
-    
     );
   };
 
@@ -61,9 +64,11 @@ class Dashboard extends Component {
     return (
       <EOrganiser
         hostedEvents={this.state.hostedEvents}
+        hostedStatuses={this.state.hostedStatuses}
         invitedEvents={this.state.invitedEvents}
+        invitedStatuses={this.state.invitedStatuses}
         acceptedEvents={this.state.acceptedEvents}
-        statuses={this.state.statuses}
+        acceptedStatuses={this.state.acceptedStatuses}
         getUserData={this.getUserData}
         username={this.state.username}
       />
@@ -73,14 +78,14 @@ class Dashboard extends Component {
   render() {
     return (
       <div className="dashContainer">
-      <Grid padded>
-        <Grid.Column className="sidebar" textAlign="center" width={4}>
-          {this.renderProfileDiv()}
-        </Grid.Column>
-        <Grid.Column cl width={12}>
-          {this.renderEOrganiseDiv()}
-        </Grid.Column>
-      </Grid>
+        <Grid padded>
+          <Grid.Column className="sidebar" textAlign="center" width={4}>
+            {this.renderProfileDiv()}
+          </Grid.Column>
+          <Grid.Column cl width={12}>
+            {this.renderEOrganiseDiv()}
+          </Grid.Column>
+        </Grid>
       </div>
     );
   }
