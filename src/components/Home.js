@@ -27,8 +27,7 @@ class Home extends Component {
 
   render() {
     var body = document.getElementsByTagName("body")[0];
-    body.style.backgroundImage =
-      "url(/static/media/adventure-balloon-clouds-68806.fb43e175.jpg)";
+    body.classList.add("login-background-image");
 
     return (
       <div className="page-div">

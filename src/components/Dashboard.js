@@ -50,7 +50,7 @@ class Dashboard extends Component {
 
   render() {
     var body = document.getElementsByTagName("body")[0];
-    body.style.backgroundImage = "url(/static/media/dashboardBg.e819e472.jpg)";
+    body.classList.add("dashboard-background-image");
 
     return (
       <div className="page-div">

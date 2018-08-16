@@ -27,6 +27,14 @@ body {
   float: right;
 }
 
+.login-background-image {
+  background-image: url("./components/images/adventure-balloon-clouds-68806.jpg");
+}
+
+.dashboard-background-image {
+  background-image: url("./components/images/dashboardBg.jpg");
+}
+
 .dashboard-sidebar {
   background-color: rgba(16, 16, 139, 0.7);
   box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.4);
