@@ -50,13 +50,13 @@ body {
 .container {
   margin: 0;
   padding: 160px;
-  background-image: url("adventure-balloon-clouds-68806\ \(1\).jpg");
+  background-image: url("./components/images/adventure-balloon-clouds-68806.jpg");
   background-size: cover;
   display: grid;
 }
 
 .dashContainer {
-  background-image: url("./components/images/cloudiness-clouds-cloudy-417045.jpg");
+  background-image: url("./components/images/dashboardBg.jpg");
   background-size: cover;
 }
 
