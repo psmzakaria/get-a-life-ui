@@ -31,7 +31,7 @@ class Home extends Component {
       "url(/static/media/adventure-balloon-clouds-68806.fb43e175.jpg)";
 
     return (
-      <div className="home-div">
+      <div className="page-div">
         <Logo />
         <div className="container">
           <Grid>

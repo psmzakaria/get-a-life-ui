@@ -2,7 +2,7 @@
 
 exports[`renders the home component of the app  1`] = `
 <div
-  className="home-div"
+  className="page-div"
 >
   <Logo />
   <div

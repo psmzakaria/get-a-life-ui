@@ -48,46 +48,37 @@ class Dashboard extends Component {
     }
   };
 
-  renderProfileDiv = () => {
-    return (
-      <div className="profile-container">
-        <h2>Profile</h2>
-
-        <Icon size="huge" inverted color="teal" circular name="smile" />
-        <h3 id="username-display">{this.state.username}</h3>
-        <CreateEvent getUserData={this.getUserData} />
-      </div>
-    );
-  };
-
-  renderEOrganiseDiv = () => {
-    return (
-      <EOrganiser
-        hostedEvents={this.state.hostedEvents}
-        hostedStatuses={this.state.hostedStatuses}
-        invitedEvents={this.state.invitedEvents}
-        invitedStatuses={this.state.invitedStatuses}
-        acceptedEvents={this.state.acceptedEvents}
-        acceptedStatuses={this.state.acceptedStatuses}
-        getUserData={this.getUserData}
-        username={this.state.username}
-      />
-    );
-  };
-
   render() {
     var body = document.getElementsByTagName("body")[0];
     body.style.backgroundImage = "url(/static/media/dashboardBg.e819e472.jpg)";
 
     return (
-      <Grid padded>
-        <Grid.Column className="sidebar" textAlign="center" width={4}>
-          {this.renderProfileDiv()}
-        </Grid.Column>
-        <Grid.Column cl width={12}>
-          {this.renderEOrganiseDiv()}
-        </Grid.Column>
-      </Grid>
+      <div className="page-div">
+        <Grid>
+          <Grid.Column
+            className="dashboard-sidebar"
+            textAlign="center"
+            width={4}
+          >
+            <h2>Profile</h2>
+            <Icon size="huge" inverted color="teal" circular name="smile" />
+            <h3 id="username-display">{this.state.username}</h3>
+            <CreateEvent getUserData={this.getUserData} />
+          </Grid.Column>
+          <Grid.Column cl width={12}>
+            <EOrganiser
+              hostedEvents={this.state.hostedEvents}
+              hostedStatuses={this.state.hostedStatuses}
+              invitedEvents={this.state.invitedEvents}
+              invitedStatuses={this.state.invitedStatuses}
+              acceptedEvents={this.state.acceptedEvents}
+              acceptedStatuses={this.state.acceptedStatuses}
+              getUserData={this.getUserData}
+              username={this.state.username}
+            />
+          </Grid.Column>
+        </Grid>
+      </div>
     );
   }
 }
