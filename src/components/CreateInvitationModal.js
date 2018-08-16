@@ -54,7 +54,11 @@ class CreateInvitationModal extends Component {
     this.setState({ isLoading: false, results: [], value: "" });
 
   handleResultSelect = (e, { result }) => {
-		const inviteeData = { username: result.title, userId: result.userid, status: 'pending' };
+    const inviteeData = {
+      username: result.title,
+      userId: result.userid,
+      status: "pending"
+    };
 
     this.setState({
       value: result.title,
@@ -109,14 +113,14 @@ class CreateInvitationModal extends Component {
   render() {
     return (
       <Modal
-        onOpen={this.open}
-        onClose={this.close}
-        size="small"
         trigger={
-          <Button primary icon>
-            Invite Friends! <Icon name="right chevron" />
+          <Button primary>
+            Invite Friends!
+            <Icon name="right chevron" />
           </Button>
         }
+        onOpen={this.open}
+        onClose={this.close}
       >
         <Modal.Header>Invitation List</Modal.Header>
         <Modal.Content>
