@@ -15,7 +15,7 @@ exports[`renders the create component of the app  1`] = `
       <Button
         animated={true}
         as="button"
-        color="olive"
+        color="teal"
         fluid={true}
         onClick={[Function]}
         role="button"
