@@ -70,6 +70,25 @@ class HostModal extends Component {
     });
   };
 
+  handleAcceptSubmit = async event => {
+    event.preventDefault();
+    const eventId = this.props.event._id;
+    const response = await fetch(`${API_URL}/events/${eventId}/update`, {
+      method: "PUT",
+      credentials: "include",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        selectedDate: this.state.selectedDate
+      })
+    });
+    if (response.ok) {
+      this.handleClose();
+      console.log("updated successfully");
+    }
+  };
   render() {
     const { title } = this.props.event;
     const listOfDates = this.state.seeMore
