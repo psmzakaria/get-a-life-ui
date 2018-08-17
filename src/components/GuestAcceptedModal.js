@@ -43,6 +43,8 @@ class GuestAcceptedModal extends Component {
     const { username: hostName } = hostId;
     const userId = getCookie("userId");
     const userEventDetails = this.props.event.attendees.find(ele => {
+      console.log(userId);
+      console.log(ele.userId);
       return ele.userId === userId;
     });
 
