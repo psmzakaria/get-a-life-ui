@@ -41,11 +41,10 @@ class GuestAcceptedModal extends Component {
   render() {
     const { title, hostId } = this.props.event;
     const { username: hostName } = hostId;
-    const userId = getCookie("userId");
     const userEventDetails = this.props.event.attendees.find(ele => {
-      console.log(userId);
+      console.log(this.props.userId);
       console.log(ele.userId);
-      return ele.userId === userId;
+      return ele.userId === this.props.userId;
     });
 
     console.log(userEventDetails);

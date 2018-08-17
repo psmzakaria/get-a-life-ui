@@ -79,6 +79,7 @@ const EOrganiser = props => {
                 <GuestAcceptedModal
                   event={event}
                   status={props.acceptedStatuses[index]}
+                  userId={props.userId}
                 />
               );
             })}

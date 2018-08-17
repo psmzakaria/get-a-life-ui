@@ -10,6 +10,7 @@ class Dashboard extends Component {
     super();
     this.state = {
       username: "",
+      userId: "",
       hostedEvents: [],
       hostedStatuses: [],
       invitedEvents: [],
@@ -44,6 +45,7 @@ class Dashboard extends Component {
       const userData = await response.json();
       this.setState({
         username: userData.username,
+        userId: userData.userId,
         hostedEvents: userData.hostedEvents,
         hostedStatuses: userData.hostedStatuses,
         invitedEvents: userData.invitedEvents,
@@ -86,6 +88,7 @@ class Dashboard extends Component {
               acceptedStatuses={this.state.acceptedStatuses}
               getUserData={this.getUserData}
               username={this.state.username}
+              userId={this.state.userId}
             />
           </Grid.Column>
         </Grid>
