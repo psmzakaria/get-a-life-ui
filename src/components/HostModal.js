@@ -85,6 +85,7 @@ class HostModal extends Component {
     });
     if (response.ok) {
       this.handleClose();
+      this.props.getUserData();
       console.log("updated successfully");
     }
   };
