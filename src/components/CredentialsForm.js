@@ -2,7 +2,7 @@ import React from "react";
 import { Form, Message } from "semantic-ui-react";
 import SignUpButton from "./SignUpButton";
 import SignInButton from "./SignInButton";
-const CrendentialsForm = props => {
+const CredentialsForm = props => {
   const isSignUp = props.state.componentToDisplay === "Sign Up";
   const isMessageHidden = isSignUp
     ? props.state.signUpError.hidden
@@ -61,4 +61,4 @@ const CrendentialsForm = props => {
   );
 };
 
-export default CrendentialsForm;
+export default CredentialsForm;

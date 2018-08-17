@@ -18,7 +18,7 @@ exports[`renders the home component of the app  1`] = `
         className=""
         width={8}
       >
-        <CrendentialsForm
+        <CredentialsForm
           handleOnChange={[Function]}
           handleOnSubmit={[Function]}
           loadComponent={[Function]}
