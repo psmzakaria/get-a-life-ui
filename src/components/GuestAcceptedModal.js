@@ -46,6 +46,8 @@ class GuestAcceptedModal extends Component {
       return ele.userId === userId;
     });
 
+    console.log(userEventDetails);
+
     return (
       <div className="esnap-container-size">
         <Modal
@@ -66,12 +68,16 @@ class GuestAcceptedModal extends Component {
               <strong>Host: </strong>
               {hostName}
               <br />
-              <strong> Accepted dates:</strong>
-              <br />
-              {userEventDetails.availableDates.map(ele => {
-                return <li>{ele}</li>;
-              })}
-              <br />
+              {userEventDetails.availableDates !== undefined && (
+                <div>
+                  <strong> Accepted dates:</strong>
+                  <br />
+                  {userEventDetails.availableDates.map(ele => {
+                    return <li>{ele}</li>;
+                  })}
+                  <br />
+                </div>
+              )}
               {this.props.event.selectedDate !== undefined && (
                 <div>
                   <strong> Selected date: </strong>
