@@ -2,6 +2,7 @@ import React from "react";
 import { Card, Divider, Header } from "semantic-ui-react";
 import GuestModal from "./GuestModal";
 import HostModal from "./HostModal";
+import GuestAcceptedModal from "./GuestAcceptedModal";
 import Logo from "./Logo";
 
 const getGuestModal = (event, getUserData, status) => {
@@ -74,7 +75,12 @@ const EOrganiser = props => {
         {props.acceptedEvents.length > 0 && (
           <Card.Group>
             {props.acceptedEvents.map((event, index) => {
-              return getGuestModal(event, props.invitedStatuses[index]);
+              return (
+                <GuestAcceptedModal
+                  event={event}
+                  status={props.acceptedStatuses[index]}
+                />
+              );
             })}
           </Card.Group>
         )}
