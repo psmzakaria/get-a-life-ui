@@ -3,6 +3,7 @@ import { API_URL } from "../utils/configVar";
 import { Grid, Icon } from "semantic-ui-react";
 import EOrganiser from "./EOrganiser";
 import CreateEvent from "./CreateEvent";
+import { Route, Redirect } from "react-router-dom";
 
 class Dashboard extends Component {
   constructor() {
@@ -14,7 +15,8 @@ class Dashboard extends Component {
       invitedEvents: [],
       invitedStatuses: [],
       acceptedEvents: [],
-      acceptedStatuses: []
+      acceptedStatuses: [],
+      responseStatus: ""
     };
   }
 
@@ -34,6 +36,10 @@ class Dashboard extends Component {
       }
     });
 
+    this.setState({
+      responseStatus: response.status
+    });
+
     if (response.ok) {
       const userData = await response.json();
       this.setState({
@@ -51,6 +57,11 @@ class Dashboard extends Component {
   render() {
     var body = document.getElementsByTagName("body")[0];
     body.classList.add("dashboard-background-image");
+
+    if (this.state.responseStatus === 401) {
+      console.log("UNAUTHORIZED HERE");
+      return <Redirect to="/" />;
+    }
 
     return (
       <div className="page-div">
