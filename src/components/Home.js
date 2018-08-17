@@ -9,7 +9,7 @@ class Home extends Component {
   constructor() {
     super();
     this.state = {
-      componentToDisplay: "Sign Up",
+      componentToDisplay: "Sign In",
       signUpError: {
         hidden: true,
         header: "",

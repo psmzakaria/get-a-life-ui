@@ -24,7 +24,7 @@ exports[`renders the home component of the app  1`] = `
           loadComponent={[Function]}
           state={
             Object {
-              "componentToDisplay": "Sign Up",
+              "componentToDisplay": "Sign In",
               "password": "",
               "signInError": Object {
                 "content": "",
