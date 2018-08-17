@@ -8,6 +8,7 @@ context("Homepage test", () => {
   });
 
   it.only("should return successful signup of user01", () => {
+    cy.get(".cursor-pointer").click();
     cy.get("#username")
       .clear()
       .type(user01);
@@ -17,7 +18,6 @@ context("Homepage test", () => {
   });
 
   it("should return successful signin of user and redirect to :username/events", () => {
-    cy.get(".cursor-pointer").click();
     cy.get("#username").type(user01);
     cy.get("#password").type("password01");
     cy.get("#signin[type='submit']").click();

@@ -3,6 +3,9 @@ const { URL, userGuest, userHost } = require("../fixtures/testData");
 
 const signupUser = username => {
   cy.visit(URL);
+  cy.get("a")
+    .contains("Sign Up Here")
+    .click();
   cy.get("#username")
     .clear()
     .type(username);
@@ -12,9 +15,6 @@ const signupUser = username => {
 
 const signinUser = username => {
   cy.visit(URL);
-  cy.get("a")
-    .contains("Sign In Here")
-    .click();
   cy.get("#username")
     .clear()
     .type(username);
